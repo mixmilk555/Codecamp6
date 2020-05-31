@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body,html{
+    height: 100%;
+}
+.book1{
+    width: 100%;
+    height: 100vh;
+    display:flex; 
+    align-items: center;
+    justify-content:center;
+    background-image: url(http://www.seekgif.com/uploads/ocean-desktop-backgrounds-1920x1080-7.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    
+}
+.book{
+    width: 350px;
+    border: solid 1px red; 
+    border-radius: 15px; 
+    padding: 10px; 
+    display: flex;
+    flex-wrap:wrap;
+   align-content: center;
+}
+
+.btn {
+    background-color:orange;
+    border: none;
+    color: white;
+    padding: 8px 5px;
+    font-size: 10  px;
+    cursor: pointer;
+    border-radius: 7px;
+    
+  }

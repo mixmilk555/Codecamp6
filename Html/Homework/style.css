@@ -1,0 +1,52 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* font-family: 'Abel';font-size: 22px; */
+    /* font-family: 'Aguafina Script';font-size: 22px; */
+    font-family: 'ABeeZee';font-size: 22px;
+}
+body, html {
+    height: 100%;
+  }
+.Img{
+    width: 100%;
+    height: 100vh;
+    background-image: url(http://www.seekgif.com/uploads/ocean-desktop-backgrounds-1920x1080-7.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    display:flex; 
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+   
+}  
+.Avatar{
+    box-shadow: 0 0 1rem 0 rgba(0,0,0,0.2);
+    position: relative;
+    background: inherit;
+    overflow: hidden;
+    border-radius: 5px;
+    z-index: 1;
+} 
+.Avatar:before{
+    content: "";
+    position: absolute;
+    background: inherit;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255,255,255,0.5);
+    filter: blur(13px);
+    z-index: -1;
+}
+
+img{
+    height: 200px;
+    border-radius: 50%;
+    padding: 40px;
+}
+.profileT{
+    color:#001f3f;
+}

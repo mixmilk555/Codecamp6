@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=width-driver , initial-scale=1.0">
+        <title> Grid and Flex </title> 
+        <style>
+            table#t01,table#t02,table#t03,th,tr,td{
+                border: 2px solid royalblue;
+                border-collapse: collapse;
+            }
+            table#t01 th:last-of-type{
+                background-color: salmon;
+            }
+            table#t01 tr:nth-child(even) {
+                background-color: bisque;
+                }       
+            table#t01 tr:nth-child(odd) {
+                background-color: #fff;
+            }
+            div{
+                display: flex;
+                justify-content:center;
+            }
+            table#t02 th:first-of-type{
+                background-color: cornflowerblue;
+            }
+            table#t03 th:last-of-type{
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <table id="t01">    
+            <thead>
+                <tr>
+                    <th style="padding: 20px;">Value ใน Display Property มีอะไรบ้าง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.inline : ทำให้ element อยู่ในบรรทัดเดียวกันแต่ไม่สามารถปรับแต่ width และ height ได้</td> 
+                </tr>
+                <tr>
+                    <td>2.block : element แต่ละอันอยู่คนละบรรทัด</td>
+                </tr>
+                <tr>
+                    <td>3.contents : ทำให้ elementนั้นกลายเป็น contents ไม่สามารถปรับ margin, padding, border, background ได้</td>
+                </tr>
+                <tr>
+                    <td>4.flex : การจัดรูปแบบ flex</td>
+                </tr>
+                <tr>
+                    <td>5.grid : การจัดรูปแบบ grid</td>
+                </tr>
+                <tr>
+                    <td>6.inline-(block, flex, grid, table) : ทำให้ inline มีคุณสมบัติเพิ่มขึ้น</td>
+                </tr>
+                <tr>
+                    <td>7.run-in : block or line ตามเนื้อหาของเรา</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br>
+    <br>
+    <div>
+        <table id="t02" style="width: 700px;">    
+            <thead>
+                <tr>
+                    <th style="padding: 20px;" colspan="2">Grid และ Flex แตกต่างกันอย่างไร</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 200px;" rowspan="2"> 1.ข้อแตกต่างแรก </td>
+                    <td >Grid : เป็นการจัด layout รูปแบบ two dimensions หรือ 2มิติ  </td>
+                </tr>
+                <tr>
+                    <td >Flex : เป็นการจัด layout รูปแบบ one dimensions หรือ 1มิติ  </td>
+                </tr>
+                <tr>
+                    <td style="width: 200px;" rowspan="2"> 2.ข้อแตกต่างสอง </td>
+                    <td >Grid : ส่วนมากจะใช้ครอบ flex container ใช้ในเรื่องการจัดพื้นที่โดยรวมของ container และให้ flex จัดตำแหน่ง item ภายใน  </td>
+                </tr>
+                <tr>
+                    <td >Flex : ส่วนมากจะใช้จัดตำแหน่ง item ภายใน container เราสามารถนำ flex container อยู่ภายใน grid container ได้แต่ใช้สลับกันไม่ได้  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+    <div>
+        <table id="t03" style="width: 700px;">    
+            <thead>
+                <tr>
+                    <th style="padding: 20px;" colspan="2">Justify and Align แตกต่างกันอย่างไร</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="width: 200px; text-align: center;" rowspan="3"> ข้อแตกต่าง </td>
+                    <td >Justify : เป็นการจัด item ที่อยู่ใน container แนวนอน ตามแกน y แต่ใน flex ถ้ามีการกำหนดแสดงผลแบบ column justify จะเป็นการจัดแบบแนวตั้ง เพราะเป็นการสลับแกน  </td>
+                </tr>
+                <tr>
+                    <td >align : เป็นการจัด item ที่อยู่ใน container แนวตั้ง ตามแกน x </td>
+                </tr>
+                <tr>
+                    <td> สรุป = justify จัดเรียงในแนวนอน ส่วน align จัดเรียงในแนวตั้ง โดยปกติ คำสั่ง justify and align จะอยู่ในส่วนของ container เว้นแต่ align self ของ flexbox ที่คำสั่งจะอยู่ใน item box  </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </body>
+</html>

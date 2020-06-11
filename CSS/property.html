@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-driver ,initial-scale=1.0">
+    <title> Property:Value</title>
+    <style>
+        table,tr,th,td{
+            border: 2px solid blueviolet;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table#t00 th{
+            background-color: peru;
+        }
+        table#t01 th{
+            background-color: beige;
+        }
+        table#t02 th{
+            background-color: cadetblue;
+        }
+        table#t01 *{
+            border: 2px solid chocolate;
+        }
+        table#t02 *{
+            empty-cells:hide;
+            border: 2px solid lightskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="t00" style="width: 500px;">
+        <thead>
+            <tr>
+                <th >Property และ Value คืออะไรแตกต่างกันอย่างไร</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> <b> Property </b> คือ คุณสมบัติ ลักษณะที่เรากำหนดให้เช่น width height color size เหมือนกับเราสร้างของเรากำหนดให้มีคุณสมบติอะไรบ้าง กว้าง ยาว สี สูง ให้แสดงผลตามนั้น</td> 
+            </tr>
+            <tr>
+                <td> <b> Value </b>  คือ ค่าของ Preperty ว่าเราจะกำหนดค่าให้อย่างไร เช่น สูงกี่ m  สีอะไร ขนาดใหญ่เท่าไหร่ มีกรอบแล้วกรอบสีอะไร หนาเท่าไหร่ เป็นต้น เป็นค่าให้เราใส่ให้กับ property แสดงผลตามค่านั้น</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <table id="t01" style="width: 500px;">
+        <thead>
+            <tr>
+                <th colspan="3">Property ที่สอนใน precamp มีกี่กลุ่มอะไรบ้าง</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="width: 160px; text-align:center;" rowspan="5"><b>Answer = 5 กลุ่ม</b></td>
+                <td> <strong>1.Property for content:</strong> color , size , font , text, list-style-type, Height, Width, background</td>
+            </tr>
+            <tr>
+                <td> <strong>2.Property for border:</strong>border, table</td>
+            </tr>
+            <tr>
+                <td> <strong>3.Property for padding:</strong>padding (top right buttom left)</td>
+            </tr>
+            <tr>
+                <td> <strong>4.Property for margin:</strong>margin (top right buttom left)</td>
+            </tr>
+            <tr>
+                <td> <strong>5.property for element:</strong>Display, Height, Width, Position, Float, Align, Flex, Grid
+                </td>
+            </tr>
+        
+        </tbody>
+    </table>
+    <br><br>
+
+    <table id="t02" style="width: 500px;">
+        <thead>
+            <tr>
+                <th colspan="2">Value unit มีกี่ประเภทอะไรบ้างแต่ละ ประเภทคืออะไร</th>
+            </tr>
+            <tr>
+                <th style="width: 250px;">Absolute lenghts</th>
+                <th>Relative lenghts</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td> cm = เซนติเมตร</td>
+              <td> em = โดย 1 em = 1เท่า ของ font-size เดิมของ parent element</td>
+          </tr>
+          <tr>
+              <td> mm = มิลลิเมตร</td>
+              <td> ex = 1/2 em คล้ายกับ em ต่างที่ใช้ font-size ของ font ปัจจุบันที่ใช้ใน element   </td>
+          </tr>
+          <tr>
+              <td> in = นิ้ว = 96 px = 2.54 cm</td>
+              <td> ch = เพิ่มขนาดจากความการ * ความกว้างของ 0</td>
+          </tr>
+          <tr>
+              <td> px = pixels</td>
+              <td> rem = เหมือน em แต่ต่างที่ rem จะยึดตาม root element ไม่ตามสืบทอดจาก parent element แม้ว่าจะอยู่ใน parent ก็ตาม โดยปกติขนาด font browser จะกำหนดไว้คือ 16 px เปลี่ยนโดยพิม html { font-size: Npx}</td>
+          </tr>
+          <tr>
+              <td> pt = points(1pt=1/72 of in)</td>
+              <td> vw = 1% ของความกว้าง viewport ปรับขนาดตามขนาดหน้าต่างที่เราใช้</td>
+          </tr>
+          <tr>
+              <td> pc = picas(1pc=12pt)</td>
+              <td> vh = 1% ของความสูง viewport </td>
+          </tr>
+          <tr>
+            
+              <td></td>
+              <td>Vmax , Vmin = 1/100th ของขนาด viewport ที่ใหญ่กว่า และ เล็กกว่า ตามลำดับ</td>
+          </tr>
+          <tr>
+              <td></td>
+              <td> % = ยึดตาม parent element ปัจจุบัน</td>
+          </tr>
+        </tbody>
+    </table>
+</body>
+</html>

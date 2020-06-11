@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=driver-width , initial-scale=1.0">
+        <title>Homework Css1</title>
+        <style>
+            table,tr,th{
+                border: 2px solid tomato;
+                border-collapse: separate;
+                border-spacing: 10px;
+                
+            }
+            td{
+                border:1px dotted blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="table1">
+        <table style="width: 800px;">
+            <caption style="font-size: 20px; color:blue; background-color:rgb(224, 240, 87);">CSS syntax</caption>
+            <thead>
+                <tr>
+                    <th colspan="3">CSS syntax : โครงสร้างทางไวยากรณ์ และรูปแบบของภาษา CSS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td><b>CSS syntax ประกอบด้วยอะไรบ้าง :</b></td>
+                <td>1.seletor(ตำแหน่งที่เลือกจะกำหนดลักษณะ)</td>
+                <td>2.declaration(การประกาศลักษณะ)</td>
+                </tr>
+                <tr>
+                    <td colspan="3">รูปแบบโครงสร้าง css : <b>selector { property:value } , selector { property1:value1; property2:value2 }</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+    <div class="table2">
+        <table style="width: 800px;">
+            <caption style="font-size: 20px; color:blue; background-color:rgb(224, 240, 87);">CSS</caption>
+            <thead>
+                <tr>
+                    <th colspan="3">การเขียน CSS มีกี่แบบอะไรบ้าง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td rowspan="3"><b>Answer: 3 แบบ</b></td>
+                <td>1.Inlune CSS: เขียนใน tag html  <br><b>เช่น</b>"< h1 style="color:blue;text-align:center;">This is a heading< /h1>"</td>
+                </tr>
+                <tr>
+                    <td>2.external CSS: เขียนแยกไฟล์โดย link เข้ากับไฟล์ CSS จากภายนอก<br><b>เช่น</b> < link rel="stylesheet" type="text/css" href="mystyle.css"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">3.Internal CSS: เขียน < style> ไว้ภายในส่วนของ < head>ของหน้า  HTML</b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+    <div class="table3">
+        <table style="width: 800px;">
+            <caption style="font-size: 20px; color:blue; background-color:rgb(224, 240, 87);">Selector</caption>
+            <thead>
+                <tr>
+                    <th colspan="3">Selector มีกี่แบบอะไรบ้าง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td style="width: 160px; text-align:center;" rowspan="6"><b>Answer : 6 แบบ</b></td>
+                <td>1.ID</td>
+                </tr>
+                <tr>
+                    <td>2.Class</td>
+                </tr>
+                <tr>
+                    <td colspan="3">3.Pseudo element</b></td>
+                </tr>
+                <tr>
+                    <td colspan="3">4.Pseudo class </b></td>
+                </tr>
+                <tr>
+                    <td colspan="3">5.Combinators</b></td>
+                </tr>
+                <tr>
+                    <td colspan="3">6.attribute selector </b></td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+    <div class="table4">
+        <table style="width: 800px;">
+            <caption style="font-size: 20px; color:blue; background-color:rgb(224, 240, 87);">Combinator</caption>
+            <thead>
+                <tr>
+                    <th colspan="3">Combinator มีกี่แบบอะไรบ้าง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td style="width: 160px; text-align:center;" rowspan="6"><b>Answer : 6 แบบ</b></td>
+                <td>1.Comma Combinator "A,B" &nbsp;&nbsp; <br> <b>Ex.  </b> &nbsp; a, p, div สามารถให้เราเลือก element ได้มากกว่า 2 ตัวเป็นการรวมตัวเลือก</td>
+                </tr>
+                <tr>
+                    <td>2.Descendant selector (space) : a b <br><b>Ex.  </b> &nbsp; เลือก Tag b ที่อยู่ภายใน Element a ทั้งหมด</td>
+                </tr>
+                <tr>
+                    <td colspan="3">3.Child selector(>) : a>b <br><b>Ex.  </b> &nbsp; เลือก b ที่เป็น Child element ของ a</td>
+                </tr>
+                <tr>
+                    <td colspan="3">4.Adjacent sibling selector : a+b <br> <b>Ex. </b> &nbsp; เลือก element b ที่ติดตาม a  เช่น div + a เลือก < a> ที่อยู่หลัง < div>ในกรณี < div>มี < a>ตามหลังสองตัวเอาเพียงแค่ตัวเดียวคือตัวแรกที่ติด < div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">5.General sibling selector(~) : a~b <br><b>Ex. </b> &nbsp; 
+                     มีลักษณะการใช้งานที่คล้าย a+b ต่างที่ a~b จะเลือก b ทั้งหมดหลัง a ถ้า a+b จะเลือก b แค่ตัวเดียวภายใน a </td>
+                </tr>
+                <tr>
+                    <td colspan="3">6.Universal Selector(*) : a* <br><b>Ex. </b> &nbsp;
+                    มีความหมายคือเลือกทุกอย่างเช่น p* เลือกทุก element ที่อยู่ภายในทุก < p> element </td>
+                </tr>
+            </tbody>
+        </table>
+    </div><br><br>
+    </body>
+</html>

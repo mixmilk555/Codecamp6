@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-driver ,initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> Form </title>
+    <style>
+        table {
+          border: 1px solid black;
+        }
+        </style>
+</head>
+<body>
+  <table>
+      <tbody>
+          <tr>
+              <td>
+                  <form>
+                  <label for="aname">Name <span style="color: red;">*</span>:</label>
+              </form>
+              </td>
+              <td>
+            <form>
+                <input type="text" id="aname" name="aname" value=""> <i style="font-size:24px" class="fa">&#xf059;</i>
+            </form>
+            </td>
+          </tr>
+          <tr>
+            <td>
+                <form>
+                <label for="atab text">Tab text <span style="color: red;">*</span>:</label>
+            </form>
+            </td>
+            <td>
+          <form>
+              <input type="text" id="atab text" name="atab" value=""> <i style="font-size:24px" class="fa">&#xf059;</i>
+          </form>
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <form>
+                <label for="aURL">URL <span style="color: red;">*</span>:</label>
+            </form>
+            </td>
+            <td>
+          <form>
+            <span>http://www.wizehive.com/webform/</span> <input type="text" id="aURL" name="URL" value=""> 
+          </form>
+          </td>
+        </tr>
+          <tr >
+            <td style="background-color: rgb(201, 191, 191); padding-left: 10px; padding: 5px;" colspan="2"> FORM SETUP</td>
+        </tr>
+        <tr>
+            <td>Form:</td>
+            <td>
+                <form>
+                    <select name="sauce"  style="width: 180px;">
+                        <option value="tomato">Tomato</option>
+                        <option value="barbeque">Barbeque</option>
+                        <option value="mayonnaise">Mayonnaise</option>
+                        <option value="secret">Secret Sauce</option>
+                      </select>
+                      <input type="button" onclick="alert('Edit test')" value="Edit">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Logo :
+            </td>
+            <td>
+                no logo uploaded
+                <input type="button" onclick="alert('Edit test')" value="Edit">
+            </td>
+        </tr>
+        <tr>
+            <td>Template Text:</td>
+            <td>
+                <form>
+                    <select name="lang"  style="width: 180px;">
+                        <option value="english">English</option>
+                        <option value="thai">Thai</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="myanmar">Myanmar</option>
+                      </select>
+                      <input type="button" onclick="alert('Edit test')" value="Edit">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Review Form:</td>
+            <td>
+                <form>
+                    <select name="rform" style="width: 180px;"> 
+                        <option value="default">Default</option>
+                        <option value="thai">Thai</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="myanmar">Myanmar</option>
+                      </select>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Review score:</td>
+            <td>
+                <form>
+                    <select name="rscore" style="width: 180px;">
+                        <option value="rating">Rating</option>
+                        <option value="thai">Thai</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="myanmar">Myanmar</option>
+                      </select>
+                      <input type="button" onclick="alert('Reload test')" value="Reload Fields">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Scoring Type:</td>
+            <td>
+                <form>
+                    <select name="scoring">
+                        <option value="average">Average</option>
+                        <option value="thai">Thai</option>
+                        <option value="japanese">Japanese</option>
+                        <option value="myanmar">Myanmar</option>
+                      </select>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="mscore">Max Score:</label></td>
+            <td>
+                <form>
+                    <input type="text" id="mscore" name="mscore" value="4.0">
+                </form>
+            </td>
+        </tr>
+      </tbody>
+  </table>
+</body>
+</html>

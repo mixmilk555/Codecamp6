@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width-driver , initial-scale=1.0">
+    <title> Position & Z-index</title>
+    <style>
+        table#t01,table#t02,th, tr,td {
+            border: 2px solid royalblue;
+            border-collapse: collapse;
+        }
+
+        table#t01 th:last-of-type {
+            background-color: salmon;
+        }
+
+        table#t01 tr:nth-child(even) {
+            background-color: bisque;
+        }
+
+        table#t01 tr:nth-child(odd) {
+            background-color: #fff;
+        }
+        table#t02 th:first-of-type{
+            background-color:lightpink;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+        }
+
+        div.static {
+            position: static;
+            border: 3px solid #73AD21;
+        }
+
+        div.relative {
+            position: relative;
+            left: 30px;
+            border: 3px solid #73AD21;
+        }
+
+        div.fixed {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            border: 3px solid #73AD21;
+        }
+
+        div.relative2 {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            border: 3px solid #73AD21;
+        }
+
+        div.absolute {
+            position: absolute;
+            top: 80px;
+            right: 0;
+            width: 200px;
+            height: 100px;
+            border: 3px solid #73AD21;
+        }
+
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            padding: 5px;
+            background-color: #cae8ca;
+            border: 2px solid #4CAF50;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <table id="t01">
+            <thead>
+                <tr>
+                    <th style="padding: 20px;">Position คืออะไร และ มีอะไรบ้าง</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Position เป็นเครื่องมือหนึ่งที่ใช้กำหนดตำแหน่ง element ต่างๆบน layout </td>
+                </tr>
+                <tr>
+                    <td>1. static :เป็นค่าพื้นฐานของทุก block เป็นค่า default ของ position</td>
+                </tr>
+                <tr>
+                    <td>2.relative
+                        :เป็นการจัดตำแหน่งจากจุดดั้งเดิมปกติสามารถกำหนดตำแหน่งที่จะไปจากจุดเดิมได้โดยจะยึดตำแหน่ง
+                        elementก่อนหน้า (top,bottom,left,right)</td>
+                </tr>
+                <tr>
+                    <td>3.fixed :เลื่อนไปที่ไหนก็ได้ใน viewport มีความสัมพันธ์กับ viewport โดยจะพิเศษคือกล่องที่โดน
+                        fixed จะถูกตรึงไว้ตำแหน่งเดิม ไม่ว่าจะ scroll ไปตำแหน่งไหน มันก็จะอยู่ที่ตำแหน่งนั้น</td>
+                </tr>
+                <tr>
+                    <td>4.absolute :จัดวางตำแหน่งโดยอิสระโดยยึดตาม parent element ที่ครอบ </td>
+                </tr>
+                <tr>
+                    <td>5.sticky :จัดตำแหน่งตามตำแหน่งการเลื่อนของผู้ใช้ คล้ายกับการนำ relative กับ fixed ไว้ด้วยกัน
+                        relative กำหนดตำแหน่งเมื่อเราเลื่อนไปจนถึงตำแหน่งที่กำหนด จะทำการ fixed ทำให้
+                        กล่องนั้นเคลื่อนที่ตามเราไปเหมือนใช้ fixed ต้องมีการระบุค่าตำแหน่งอย่างน้อย 1 ค่าเพื่อใช้งาน
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="t02">
+            <thead>
+                <tr>
+                    <th style="padding: 20px;">Z-index คืออะไรใช้อย่างไร</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Z-index คือ การจัด element ในรูปแบบชั้น layer  </td>
+                </tr>
+                <tr>
+                    <td>วิธีการใช้ Z-index จะคล้าย order คือเรียงตามค่าตัวเลข โดยปกติทุกตัวจะมีค่า Z-index=0 ถ้ากำหนดค่ามากจะแสดงอยู่ด้านหน้า แต่ถ้าเป็นค่า ลบ จะถูกซ้อนอยู่ข้างล่าง มองภายรวมเป็นชั้นๆ layer  </td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    
+    <h2>position: static;</h2>
+
+    <p> element with position: static; ไม่ได้อยู่ในตำแหน่งพิเศษใด ๆ มันจะถูกวางตำแหน่งตามการไหลปกติของหน้า</p>
+
+    <div class="static">
+        This div element has position: static;
+    </div>
+
+    <h2>position: relative;</h2>
+
+    <p>element with position: relative; ตำแหน่งจะย้ายออกไปจากที่สัมพันธ์กับตำแหน่งปกติ:</p>
+
+    <div class="relative">
+        This div element has position: relative;
+    </div>
+
+
+    <h2>position: absolute;</h2>
+
+    <p>An element with position: มีความสัมพันธ์กับ parent element จัดวางตำแหน่งโดยอิสระโดยยึดตาม parent element ที่ครอบ
+    </p>
+
+    <div class="relative2">This div element has position: relative;
+        <div class="absolute">This div element has position: absolute;</div>
+    </div>
+
+
+    <h2>position: fixed;</h2>
+
+    <p>An element with position: fixed;
+        อยู่ในถูกตรึงกับวิวพอร์ตซึ่งหมายความว่าจะอยู่ในตำแหน่งเดิมเสมอแม้ว่าหน้าจะถูกเลื่อน</p>
+
+    <div class="fixed">
+        This div element has position: fixed;
+    </div>
+
+    <h2>position: sticky;</h2>
+    <p>Try to <b>scroll</b> inside this frame to understand how sticky positioning works.</p>
+    <p>Note: IE/Edge 15 and earlier versions do not support sticky position.</p>
+
+    <div class="sticky">I am sticky!</div>
+
+    <div style="padding-bottom:2000px">
+        <p>In this example, the sticky element sticks to the top of the page (top: 0), when you reach its scroll
+            position.</p>
+        <p>Scroll back up to remove the stickyness.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
+            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset
+            concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum.
+            Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+</body>
+
+</html>

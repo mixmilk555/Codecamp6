@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive page</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .s1 img {
+        width: 100%;
+        height: 40rem;
+    }
+
+    .s2 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        margin: 10%;
+        left: 5%;
+        background-color: white;
+        width: 70%;
+        border-radius: 10px;
+        height: 80%;
+    }
+
+    .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-family: 'Kanit', sans-serif;
+        font-size: 50px;
+    }
+
+    .your {
+        position: relative;
+        left: 5%;
+        font-family: 'Kanit', sans-serif;
+        font-size: 20px;
+        color: rgba(9, 30, 29, 0.63);
+    }
+
+    .send {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 1rem;
+        left: 10%;
+        width: 70%;
+    }
+
+    .send button {
+        font-family: 'Kanit', sans-serif;
+        font-size: 30px;
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+    }
+
+    @media screen and (min-width: 1025px) {}
+
+    @media screen and (max-width: 1024px) and (min-width: 768px) {
+        .s1 img {
+            width: 100vw;
+            height: auto;
+        }
+
+        .s2 {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 30vh;
+            margin: 10%;
+            left: 5%;
+            background-color: white;
+            width: 70%;
+            border-radius: 10px;
+            height: 80vh;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            font-family: 'Kanit', sans-serif;
+            font-size: 50px;
+        }
+
+        .your {
+            width: 100%;
+            position: relative;
+            left: 5%;
+            font-family: 'Kanit', sans-serif;
+            font-size: 20px;
+            color: rgba(9, 30, 29, 0.63);
+        }
+
+        .send {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            top: 1rem;
+            left: 10%;
+            width: 70%;
+        }
+
+        .send button {
+            font-family: 'Kanit', sans-serif;
+            font-size: 30px;
+            color: white;
+            background-color: red;
+            border-radius: 5px;
+        }
+    }
+
+    @media screen and (min-width: 400px) and (max-width: 767px) {
+        .s1 img {
+            width: 100vw;
+            height: auto;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            font-family: 'Kanit', sans-serif;
+            font-size: 2em;
+        }
+
+        .s2 {
+            display: grid;
+            grid-template-columns: auto;
+            position: absolute;
+            top: 20vh;
+            margin: 10%;
+            left: 5%;
+            background-color: white;
+            width: 70vw;
+            border-radius: 10px;
+            height: 80vh;
+        }
+        .item1,.item2{
+            display: grid;
+            grid-template-columns: auto;
+        }
+    }
+</style>
+
+<body>
+    <div class="main" style="background-color: white; width: 100%; height: 100vw; background-repeat: repeat;">
+        <div class="s1"><img src="https://www.pimclick.com/wp-content/uploads/2018/11/contact-banner.jpg"
+                alt="pimclick"> </div>
+        <div class="s2">
+            <div class="title">
+                Contact us <span style="color: red">today</span>
+            </div>
+            <div class="your">
+                <table>
+
+                    <tr >
+                        <td class="item1"> <p >Your Name (required)</p><input class="item3" type="text" style="width: auto; height: 40px; border:1px solid rgba(9,30,29,0.2); border-radius: 5px;"></td>
+                        <td class="item2"> <p>Your Email (required)</p><input class="item4" type="text" style="width: auto; height: 40px; border:1px solid rgba(9,30,29,0.2); border-radius: 5px;"></td>
+                    </tr>
+                    <tr>
+                        <td> Subject</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text"
+                                style="width: 64.5vw; height: 40px; border:1px solid rgba(9,30,29,0.2); border-radius: 5px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 40vw;">Your Message</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="text"
+                                style="width: 64.5vw; height: 15rem; border:1px solid rgba(9,30,29,0.2); border-radius: 5px;">
+                        </td>
+                    </tr>
+                </table>
+                <div class="send">
+                    <button>SEND</button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>

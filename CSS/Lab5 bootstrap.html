@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .s1 img {
+        width: 100%;
+        height: 40rem;
+    }
+
+    .s2 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        margin: 10%;
+        left: 5%;
+        background-color: white;
+        width: 70%;
+        border-radius: 10px;
+        height: 100%;
+    }
+
+    .title {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-family: 'Kanit', sans-serif;
+        font-size: 50px;
+    }
+
+    .row {
+        position: relative;
+        left: 5%;
+        font-family: 'Kanit', sans-serif;
+        font-size: 20px;
+        color: rgba(9, 30, 29, 0.63);
+    }
+
+    .send {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 1rem;
+        left: 10%;
+        width: 70%;
+    }
+
+    .send button {
+        font-family: 'Kanit', sans-serif;
+        font-size: 30px;
+        color: white;
+        background-color: red;
+        border-radius: 5px;
+    }
+ @media screen and (min-width: 1025px) {
+        .s1 img {
+        width: 100vw;
+        height: auto;
+    }
+    }
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .s1 img {
+        width: 100vw;
+        height: auto;
+    }
+    .s2 {
+         border: 1px solid rgb(211, 195, 195);
+        
+         margin-top: -3em;
+        }
+ 
+}
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+    .s1 img {
+        width: 100vw;
+        height: auto;
+    }
+    .s2 {
+         border: 1px solid rgb(211, 195, 195);
+         margin-top: -8em;
+        }
+   
+   
+}
+</style>
+
+<body>
+    <div class="main" style="background-color: white; width: 100%; height: 100vw; background-repeat: repeat;">
+        <div class="s1"><img src="https://www.pimclick.com/wp-content/uploads/2018/11/contact-banner.jpg"
+                alt="pimclick"> </div>
+
+        <div class="s2">
+            <div class="title">
+                Contact us <span style="color: red">today</span>
+            </div>
+            <div class="rowmain">
+            <div class="row">
+                <div class="col-10 col-sm-6 col-lg-6">Your Name (required)<input  style="width: 87%; height: 3em; border: 1px solid rgb(207, 203, 203); border-radius: 5px;" type="text"></div>
+               <div class="col-10 col-sm-6 col-lg-6">Your Email (required)<input  style="width: 87%; height: 3em; border: 1px solid rgb(207, 203, 203); border-radius: 5px;" type="text"></div>
+              </div><br><br>
+              <div class="row">
+                <div class="col">Subject</div>
+              </div>
+              <div class="row">
+                <div class="col"><input style="width: 61vw; height: 3em; border: 1px solid rgb(207, 203, 203); border-radius: 5px;" type="text"></div>
+              </div><br><br>
+              <div class="row">
+                <div class="col">Your Message</div>
+              </div>
+              <div class="row">
+                <div class="col"><input style="width: 61vw; height: 10em; border: 1px solid rgb(207, 203, 203); border-radius: 5px;" type="text"></div>
+              </div>
+
+                <div class="send">
+                    <button>SEND</button>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

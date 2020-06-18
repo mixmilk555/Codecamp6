@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=width-driver , initial-scale=1.0">
+<title> Lab 1 animation</title>
+<style>
+    .head{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+    }
+    .head1{
+        text-align: center;
+        border: 1px double fuchsia;
+        width: fit-content;
+        padding: 10px;
+    }
+    .div{
+        width: 200px;
+        height: 300px;
+        background-color: yellow;
+        animation-name: test;
+        animation-duration: 5s;
+        font-size: 2em;
+        
+    }
+    p {
+        animation: test2;
+        animation-duration: 4s;
+        visibility: visible;
+    }
+    @keyframes test2 {
+        from {
+            visibility:hidden;
+         }
+     50% {
+            visibility:hidden;
+         }
+     75% {
+            visibility:visible;
+      }
+      90% {
+            visibility:hidden;
+      }
+      to{
+          visibility: hidden;
+      }
+    }
+    /* @keyframes test {
+        from{
+            
+            background-color: violet;
+            width: 400px;
+            border: 1px solid black;
+            color: cornsilk;
+        }
+        to{ 
+           
+            position: relative;
+            top: 10em;
+            background-color: tomato;
+            width: 200px;
+            border: 2px solid slateblue;
+            color: powderblue;
+            
+            }
+        
+    } */
+    @keyframes test {
+        0%{
+            background-color: violet;
+            width: 400px;
+            border: 1px solid black;
+            color: cornsilk;
+        }
+        50%{
+            position: relative;
+            top: 10em;
+            background-color: tomato;
+            width: 200px;
+            border: 2px solid slateblue;
+            color: powderblue;
+            
+        }
+        100%{
+            background-color: rgb(226, 197, 192);
+            width: 200px;
+            border: 10px solid slateblue;
+            color: powderblue;
+            
+        }
+    }
+
+</style>
+</head>
+<body>
+    <div class="head">
+    <h2 class="head1" > Animation name & @keyframes</2>
+    </div>
+
+<div class="div" style="margin :auto; text-align: center;"><p> Animation </p></div>
+
+</body>
+
+</html>

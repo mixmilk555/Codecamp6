@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 Animation</title>
+    <style>
+        .head {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+        }
+
+        .head1 {
+            border: 1px double fuchsia;
+            width: fit-content;
+            padding: 10px;
+        }
+        .div{
+        width: 200px;
+        height: 300px;
+        background-color: yellow;
+        font-size: 2em;
+        animation: test 10s linear 2s infinite alternate;
+    }
+    .main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    p {
+        animation: test2 5s;
+      
+    }
+    @keyframes test2 {
+        from {
+            visibility:hidden;
+         }
+     50% {
+            visibility:hidden;
+         }
+     75% {
+            visibility:visible;
+      }
+      90% {
+            visibility:hidden;
+      }
+      to{
+          visibility: hidden;
+      }
+    }
+
+    @keyframes test {
+        0%{
+            position: relative;
+            top: 5em;
+            background-color: violet;
+            width: 400px;
+            border: 1px solid black;
+            color: cornsilk;
+        }
+        25%{
+            position: relative;
+            top: 7em;
+            background-color: tomato;
+            width: 200px;
+            border: 5px solid slateblue;
+            color: powderblue;
+        }
+
+        50%{
+            position: relative;
+            top: 8em;
+            background-color: violet;
+            width: 400px;
+            border: 7px solid black;
+            color: cornsilk;
+        }
+        
+        75%{
+            position: relative;
+            top: 9em;
+            background-color: rgb(39, 52, 170);
+            width: 200px;
+            border: 10px solid rgb(138, 231, 62);
+            color: powderblue;
+            }
+        
+        100%{
+            position: relative;
+            top: 10em;
+            background-color: rgb(226, 197, 192);
+            width: 200px;
+            border: 12px solid slateblue;
+            color: powderblue;       
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <h2 class="head1"> Animation shorthand</2>
+    </div><br><br><br><br><br><br><br>
+
+<div class="main">
+    <div class="div" style="margin :auto; text-align: center;">
+        <p> Nomal </p>
+    </div>
+</div>
+</body>
+
+</html>

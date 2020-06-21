@@ -12,4 +12,4 @@
 - ## [Lab 3 Slide 57 animation CSS](https://github.com/mixmilk555/Codecamp6/blob/master/CSS/Lab3%20animation.html)  
 - ## [Lab 4 bootstrap](https://github.com/mixmilk555/Codecamp6/blob/master/CSS/Lab4%20bootstrap.html)
 - ## [Lab 5 bootstrap slide 35 ทำ Responsive page เป็น bootstrap](https://github.com/mixmilk555/Codecamp6/blob/master/CSS/Lab5%20bootstrap.html)
-## __test git clone__
+## __test git clonee__

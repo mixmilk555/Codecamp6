@@ -71,7 +71,7 @@ img.jordan1 {
     background-color: #f5f5f5;
     min-width: 140px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 3;
   }
   
   .dropdown-content a {
@@ -79,6 +79,7 @@ img.jordan1 {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    z-index: 3;
   }
   
   .dropdown-content a:hover {background-color: #ddd;}
@@ -116,7 +117,7 @@ img.jordan1 {
     top: 15px;
     width: 13vw;
     height: 60px;
-    z-index: 2;
+    z-index: 3;
 }
 .topnav{
     position: relative;

@@ -1,0 +1,15 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: slategray;
+}
+h2 {
+    margin-top: 1rem;
+    margin-left: 2vw;
+    text-align: center;
+    width: 96vw;
+    font-size: 5em;
+    background-color: blanchedalmond;
+    color: rgb(24, 7, 102);
+    
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1{
+            color: blue;
+            font-size: 2em;
+            width: fit-content;
+            background-color: coral;
+            border: 7px dotted fuchsia;
+        }
+        div{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 100vw; border: 3px solid red;">
+    <p id="p1">  </p>
+    </div>
+
+    <script>
+        let m = prompt("Enter Number");
+            for(let n=1; n<13; n++){
+                document.querySelector("#p1").innerHTML += `${m} x ${n} = ${m*n} <br>`
+            } //for n
+            document.querySelector("#p1").innerHTML += '<hr>'
+        
+    </script>
+</body>
+</html>
+
+<!-- for(let m = 2; m < 13; m++){
+    for(let n=1; n <13; n++){
+        document.querySelector("#p1").inner.HTML += '${m} x ${n} = ${m*n} <br>'
+    }
+    document.querySelector("#p1").innerHTML += '<hr>' 
+}   ตัวอย่าง การบ้านคือ Code ด้านบนครับบ --> 

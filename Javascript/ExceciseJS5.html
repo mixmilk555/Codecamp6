@@ -7,10 +7,22 @@
 </head>
 <body>
     <script>
-        let ask = (question,yes,no) => {if (confirm(question)) yes() 
-        else no();}
 
-        ask("Do you agree?",function(){ alert("You agreed.");},function(){alert("You canceled the execution.");})
+        let ask = (question,yes,no) => {
+            if (confirm(question)) yes() 
+        else no();
+    }
+        let f1 = () => {
+            alert("You agreed.");
+        }
+        let f2 = () => {
+            alert("You canceled the execution.");
+        }
+        
+        ask("Do you agree?",f1,f2);
+
+        
     </script>
+    
 </body>
 </html>

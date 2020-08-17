@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let login = prompt('input username : ');
+if(login === "Admin"){
+let pass = prompt('Input your password : ');
+if(pass === 'codecamp#6'){
+alert("ยินดีต้อนรับ");
+}
+else if(pass === "" || pass == null){
+alert("ยกเลิก");}
+else{
+    alert("Wrong password");
+}
+}
+else if(login == "" || login == null){
+alert("ยกเลิก");
+}
+else{
+alert("ผมไม่รูจักคุณ");
+}
+    </script>
+</body>
+</html>

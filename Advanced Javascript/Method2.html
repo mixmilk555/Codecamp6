@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method 2</title>
+</head>
+
+<body>
+    <!-- 6.6.  แบบฝึกหัด
+2.	การทำงานของ code ดังกล่าวจะได้อะไรออกมา -->
+    <script>
+        function makeUser() {
+            return {
+                name: "John",
+                ref: this
+            };
+        };
+
+        let user = makeUser;
+
+        alert(user.ref.name); // What's the result?
+
+//   คำตอบ undefined เพราะ user เป็น function ไม่ใช่ object ไม่มี this ของ object ให้เรียกใช้ 
+    </script>
+</body>
+
+</html>

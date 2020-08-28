@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด object 2</title>
+</head>
+
+<body>
+    <!-- ไหม ถ้ามีให้คืนค่า true ถ้าไม่มีให้คืนค่า false
+    4.18. แบบฝึกหัด
+    2. ให้เขียนฟังก์ชันชื่อ isEmpty(obj) โดยจะมี parameters เป็น obj และ ฟังก์ชันนี้จะเช็คว่า obj นี้มี properties -->
+
+    <script>
+        let obj = {
+            name: 'john',
+            age: 19,
+            key: true
+        };
+        let obj2 = {
+            name: 'Mix',
+            skill: "JS"
+        };
+        let obj3 = {};
+
+        function isEmpty(obj) {
+            for (let key in obj) {
+                if (key in obj)
+                    return true;
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

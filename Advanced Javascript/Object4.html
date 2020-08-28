@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด Object 4</title>
+</head>
+
+<body>
+    <!-- 4.18. แบบฝึกหัด
+    4. จงเขียนฟังก์ชัน sum(obj) ที่รับ obj ที่เก็บ properties โดยมี key เป็นชื่อพนักงานและมี value เป็นเงินเดือน
+    ให้ฟังก์ชันคืนค่าเป็นผลรวมของเงินเดือนพนักงานทั้งหมด -->
+
+    <script>
+        let salaries = {
+            John: 100,
+            Ann: 160,
+            Pete: 130,
+            Mix: 500
+        };
+        function sum(obj) {
+            let result = 0;
+            for (let key in obj) {
+                result = obj[key] + result;
+
+            }
+            console.log(result);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 6.6.  แบบฝึกหัด
+4(ต่อ).	ดัดแปลง Object ชื่อ ladder สามารถเรียก function แบบนี้ได้ -->
+    <script>
+        let ladder = {
+            step: 0,
+            up() {
+                this.step++;
+                    return this;
+            },
+            down() {
+                this.step--;
+                    return this;
+            },
+            showStep: function () { // shows the current step
+                alert(this.step);
+                    return this;
+            }
+        };
+        ladder.up().up().down().showStep(); // 1
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด Method 3</title>
+</head>
+
+<body>
+    <!-- 6.6.  แบบฝึกหัด
+3.	สร้าง object calculator จาก 3 methods นี้:
+read() ใช้ prompts สำหรับรับค่ามา 2 ค่าและเก็บเป็น object properties.
+sum() คืนค่าผลบวกของ 2 ค่านั้น.
+mul() คืนค่าผลคูณของ 2 ค่านั้น. -->
+<script>
+    let calcuator = { 
+            read(){
+         this.a = +prompt('Enter Number : ');
+         this.b = +prompt('Enter Number : ');
+    }
+            sum(){
+        return this.a+this.b;
+    }
+            mul(){
+        return this.a*this.b;
+    }
+    };
+</script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array3</title>
+</head>
+
+<body>
+    <!-- 3.11.  แบบฝึกหัด
+3.	เขียนฟังก์ชัน sumInput() ที่
+a ใช้ propmt รับ value มาเก็บใน array
+b หยุดถามเมื่อเจอค่าที่ไม่ใช่ ตัวเลข
+c คำนวณผลรวมของตัวเลขทั้งหมดใน Array -->
+
+    <script>
+        function sumInput() {
+            let a = +prompt("Enter value :");
+            let arr = [];
+            while (isFinite(a)) {
+                a = +prompt("Enter value : ");
+                arr = +arr + a;
+                console.log(arr);
+            }
+            console.log(arr);
+        }
+    </script>
+
+</body>
+
+</html>

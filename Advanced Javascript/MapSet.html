@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map and Set</title>
+</head>
+
+<body>
+    <script>
+        // 6.10.แบบฝึกหัด
+        // 1.ให้ arr เป็น Array
+        // สร้าง function ชื่อ unique(arr) ให้คืนค่าเป็น unique items ของ arr
+        let values = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+        function unique(arr) {
+            let zet = new Set(arr);
+        }
+        unique(values); //{"Hare", "Krishna", ":-O"}
+
+        // 2.	Anagram เป็นตัวอักษรที่มีจำนวนตัวอักษรแต่ละตัวที่เท่ากัน แต่เรียงไม่เหมือนกัน ( Optional )
+        let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+        function aclean(arr) {
+            arr.pop();
+            arr.sort();
+            arr.splice(2, 1, "era");
+            arr.splice(3, 1, "ear");
+            return arr.join().split(',', 3);
+        }
+        // 3.เราได้ array จาก map.keys() แต่ไม่สามารถใช้ push ได้
+        // เราจะทำยังไงให้ keys.push สามารถทำงานได้
+        let map = new Map();
+
+        map.set("name", "John");
+
+        let keys = Object.entries(map.keys());
+
+        // Error: keys.push is not a function
+        keys.push("more");
+
+    </script>
+</body>
+
+</html>

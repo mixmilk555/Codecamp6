@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width , initial-scale=1.0">
+<title>Lab String</title>
+
+<body>
+    <!-- 2.11.  แบบฝึกหัด
+3.	เขียนฟังก์ชันที่ truncate(str, maxlength) โดยฟังก์ชันดังกล่าวจะเช็คว่า string ที่ถูกส่งเข้ามามีความยาวเกิน maxlength ไหม ถ้าเกินให้แทน 
+ข้อความต่อจากนั้นด้วย “...”
+ -->
+
+    <script>
+        function truncate(str, maxlength) {
+            if (str.length < maxlength) {
+                return str.substr(0);
+            }
+            else {
+                return str.substr(0, maxlength) + "...";
+            }
+        }
+    </script>
+</body>
+
+</html>

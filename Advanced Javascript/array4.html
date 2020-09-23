@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array4</title>
+</head>
+
+<body>
+    <!-- 3.11.  แบบฝึกหัด
+4.	Maximal contiguous subarray (**Optional**)
+ให้เขียนฟังก์ชัน getMaxSubSum(arr) ที่ return ผลรวมของ subarray ที่มากที่สุดที่ติดกัน
+ -->
+    <script>
+        function getMaxSubSum(arr) {
+            debugger;
+            let so = arr[0];
+            for (let i = 1; i < arr.length; i++) {
+                arr[i] = Math.max(arr[i], arr[i] + arr[i - 1]);
+                so = Math.max(so, arr[i]);
+
+            }
+            return so;
+        };
+    </script>
+</body>
+
+</html>

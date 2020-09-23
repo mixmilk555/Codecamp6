@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array2</title>
+</head>
+<body>
+    <!-- 3.11.  แบบฝึกหัด
+2.	ให้ทำตามขั้นตอนต่อไปนี้
+a สร้าง array ชื่อ styles ที่มี items ชื่อ “Jazz” และ “Blues”
+b เพิ่ม “Rock-n-Roll” ต่อท้าย
+c นำค่า Classics ไปทับค่าตรงกลางของ Array
+d นำ items ตัวแรกออกมาและลบ items ตัวนั้นออกจาก array
+e เพิ่ม “Rap” และ “Reggae” ไปข้างหน้าของ Array -->
+  <script>
+        //a 
+        let styles = ["Jazz","Blues"];
+        //b
+        styles.push("Rock-n-Roll");
+        //c
+        styles[1] = "Classics";
+        //d
+        styles.shift();
+        //e
+        styles.unshift("Rap","Reggae");
+
+    </script>
+</body>
+</html>

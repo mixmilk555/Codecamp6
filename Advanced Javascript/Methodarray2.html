@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MethodArray2</title>
+</head>
+
+<body>
+    <script>
+        // ให้สร้าง array2 จาก array1 ตามที่โจทย์กำหนด โดยใช้ฟังก์ชัน Array.filter()
+
+        // 2.1  array1 = [1, 2, 30, 400]
+        // array2[30, 400] // filter เลขที่มากกว่า 10
+        let array1 = [1, 2, 30, 400]
+        let array2 = array1.filter(item => item > 10);
+        // 2.2  array1 = [1, 2, 3, 4]
+        // array2[1, 3] // filter เลขคี่
+        let array1 = [1, 2, 3, 4];
+        let array2 = array1.filter(function (x) {
+            return x % 2 != 0;
+        });
+        // 2.3  array1 = [1, "1", 2, {}]
+        // array2[1, 2] // filter Number
+        let array1 = [1, "1", 2, {}];
+        let array2 = array1.filter(function (x) {
+            if (typeof (x) == "number") return x;
+        });
+
+        // 2.4  array1 = ["apple", "banana", "orange", "pineapple", "watermeon"]
+        // array2["pineapple", "watermeon"] // filter ตัวอักษร > 6
+        let array1 = ["apple", "banana", "orange", "pineapple", "watermeon"]
+        let array2 = array1.filter(function (x) {
+            if (x.length > 6) return x;
+        });
+
+        // 2.5 array1 = [
+        //     { name: "apple", age: 14 },
+        //     { name: "banana", age: 18 },
+        //     { name: "watermelon", age: 32 },
+        //     { name: "pineapple", age: 16 },
+        //     { name: "peach", age: 24 },
+        // ]
+        // array2[
+        //     { name: "apple", age: 14 },
+        //     { name: "pineapple", age: 16 },
+        //  ] // filter age < 18
+
+        let array1 = [
+            { name: "apple", age: 14 },
+            { name: "banana", age: 18 },
+            { name: "watermelon", age: 32 },
+            { name: "pineapple", age: 16 },
+            { name: "peach", age: 24 },
+        ];
+        let array2 = array1.filter(function (x) {
+            if (x.age < 18) return x;
+        });
+        // 2.6 array1 = [
+        //     { name: "apple", age: 14 },
+        //     { name: "banana", age: 18 },
+        //     { name: "watermelon", age: 32 },
+        //     { name: "pineapple", age: 16 },
+        //     { name: "peach", age: 24 },
+        // ]
+        // array2[
+        //     { name: "apple", age: 14 },
+        //     { name: "banana", age: 18 },
+        //     { name: "pineapple", age: 16 },
+        //     { name: "peach", age: 24 },
+        //   ] // filter ไม่เอาคนที่อายุ 32
+        let array1 = [
+            { name: "apple", age: 14 },
+            { name: "banana", age: 18 },
+            { name: "watermelon", age: 32 },
+            { name: "pineapple", age: 16 },
+            { name: "peach", age: 24 },
+        ];
+        let array2 = array1.filter(function (x) {
+            if (x.age > 18) return x;
+        });
+        // 2.7  array1 = [1, -3, 2, 8, -4, 5]
+        // array2[1, 2, 8, 5] // filter เลขบวก
+
+        let array1 = [1, -3, 2, 8, -4, 5];
+        let array2 = array1.filter(function (x) {
+            if (x.age != 32) return x;
+        });
+
+        // 2.8  array1 = [1, 3, 4, 5, 6, 7, 8]
+        // array2[3, 6] // filter เลขหาร 3 ลงตัว
+        let array1 = [1, 3, 4, 5, 6, 7, 8];
+        let array2 = array1.filter(function (x) {
+            if (x % 3 == 0) return x;
+        });
+        // 2.9  array1 = ["peach", 1, -3, "2", {}, []]
+        // array2["peach", "2"] // filter string
+        let array1 = ["peach", 1, -3, "2", {}, []];
+        let array2 = array1.filter(function (x) {
+            if (typeof (x) == "string") return x;
+        });
+        // 2.10 array1 = ["APPLE", "appLE", "PEACH", "PEach"]
+        // array2 = ["APPLE", "PEACH"] // filter คำที่เป็นอักษรใหญ่ทุกตัว
+        let array1 = ["APPLE", "appLE", "PEACH", "PEach"];
+        let array2 = array1.filter(function (x) {
+            if (x == x.toUpperCase()) return x;
+        });
+        // 2.11 array1 = [
+        //     { name: "apple", birth: "2001-01-01" },
+        //     { name: "banana", birth: "1990-10-10" },
+        //     { name: "watermelon", birth: "1985-12-30" },
+        //     { name: "peach", birth: "2002-10-13" },
+        // ]
+        // array2[
+        //     { name: "banana", birth: "1990-10-10" },
+        //     { name: "peach", birth: "2002-10-13" },
+        // ] // filter คนเกิดเดือน 10
+
+        let array1 = [
+            { name: "apple", birth: "2001-01-01" },
+            { name: "banana", birth: "1990-10-10" },
+            { name: "watermelon", birth: "1985-12-30" },
+            { name: "peach", birth: "2002-10-13" },
+        ];
+        let array2 = array1.filter(function (x) {
+            x.month = new Date(x.birth).getMonth();
+            if (x.month == 9) return x;
+        });
+
+        // 2.12 array1 = [
+        //     { name: "apple", birth: "2001-01-01" },
+        //     { name: "banana", birth: "1990-10-10" },
+        //     { name: "watermelon", birth: "1985-12-30" },
+        //     { name: "peach", birth: "2002-10-13" },
+        // ]
+        // array2[
+        //     { name: "banana", birth: "1990-10-10" },
+        //     { name: "watermelon", birth: "1985-12-30" },
+        // ] // filter คนเกิดก่อนปี 2000
+
+        let array1 = [
+            { name: "apple", birth: "2001-01-01" },
+            { name: "banana", birth: "1990-10-10" },
+            { name: "watermelon", birth: "1985-12-30" },
+            { name: "peach", birth: "2002-10-13" },
+        ];
+        let array2 = array1.filter(function (x) {
+            x.year = new Date(x.birth).getFullYear();
+            if (x.year < 2000) return x;
+        });
+
+
+    </script>
+</body>
+
+</html>

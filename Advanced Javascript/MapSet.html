@@ -33,7 +33,11 @@
 
         map.set("name", "John");
 
-        let keys = Object.entries(map.keys());
+        let keys = map.keys();
+        // push เป็น Method ของ array  
+        // keys ต้องแปลงเป็น array ก่อนถึงจะใช้ได้
+        keys = Array.from(keys);
+        
 
         // Error: keys.push is not a function
         keys.push("more");

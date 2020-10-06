@@ -16,14 +16,18 @@ c คำนวณผลรวมของตัวเลขทั้งหมด
 
     <script>
         function sumInput() {
-            let a = +prompt("Enter value :");
-            let arr = [];
-            while (isFinite(a)) {
-                a = +prompt("Enter value : ");
-                arr = +arr + a;
-                console.log(arr);
+            let value = [];
+            let a = +prompt("Enter Number :");
+            while (isFinite(a) === true) {
+                value = value + a;
+                a = +prompt("Enter Number :");
             }
-            console.log(arr);
+            let b = 0;
+            for (let k of value) {
+                k = Number(k)
+                b = b + k
+            }
+            console.log(b);
         }
     </script>
 

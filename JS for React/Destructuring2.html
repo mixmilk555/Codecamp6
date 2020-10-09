@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด Destructuring</title>
+</head>
+
+<body>
+    <!-- 2.	ถ้าเรามี Object ชื่อ salaries
+           
+        let salaries = {
+    "John": 100,
+    "Pete": 300,
+    "Mary": 250
+    };
+
+			ให้สร้าง function topSalary(salaries) ที่คืนค่าชื่อคนที่มีเงินเดือนสูงสุด
+1.ถ้า salaries ไม่มีข้อมูลให้คืนค่าเป็น null
+
+2.ถ้าสูงสุดมีหลายคน ก็ให้คืนใครก็ได้สักคน -->
+    <script>
+            *** code เฉลยของอาจารย์ใน Camp ***
+        // function topSalary(salaries) {
+        //     let most = 0;
+        //     let whomMost = null;
+        //     for (let name in salaries) {
+        //         if (salaries[name] > most) {
+        //             most = salaries[name]
+        //             whomMost = name
+        //         }
+        //     } return whomMost;
+        // }
+
+                    **** คิดเองลึกไป =-=****
+            // 1.ถ้า salaries ไม่มีข้อมูลให้คืนค่าเป็น null
+            let salaries = {};
+        function topSalary(salaries) {
+            let a = Math.max(...Object.values(salaries));
+            let op = Object.entries(salaries)
+            if (Object.values(salaries).length >= 1) {
+                op.find(function ([k, v]) {
+                    if ([v] == a) {
+                        console.log(k);
+                    }
+
+                })
+            }
+            else { return null };
+        }
+
+        // 2.ถ้าสูงสุดมีหลายคน ก็ให้คืนใครก็ได้สักคน
+
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250,
+            "Mix": 300
+        };
+        function topSalary(salaries) {
+            let a = Math.max(...Object.values(salaries));
+            let op = Object.entries(salaries)
+            let b = [];
+            if (Object.values(salaries).length >= 1) {
+                b = op.find(([k, v]) => [v] == a);
+                console.log(b[0]);
+            }
+            else { return null };
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด Destructuring</title>
+</head>
+
+<body>
+    <!-- 5.7. แบบฝึกหัด
+    ถ้าเรามี Object 
+    
+    let user = {
+    name: "John",
+    years: 30
+    };
+
+                
+                ให้เขียน Destrcutring assignment ที่ให้
+    1.property ที่ชื่อ name ไปอยู่ในตัวแปร name
+    2.property ที่ชื่อ years ไปอยู่ในตัวแปร age
+    3.property ที่ชื่อ isAdmin ไปอยู่ในตัวแปร isAdmin (ให้เป็น false ถ้าไม่มีค่าให้กำหนด) -->
+
+    <script>
+    // 1.property ที่ชื่อ name ไปอยู่ในตัวแปร name
+    let {name} =user;
+    // 2.property ที่ชื่อ years ไปอยู่ในตัวแปร age
+    let {age:years} = user;
+    // 3.property ที่ชื่อ isAdmin ไปอยู่ในตัวแปร isAdmin (ให้เป็น false ถ้าไม่มีค่าให้กำหนด)
+    let {isAdmin = false} = user;}
+    </script>
+</body>
+
+</html>

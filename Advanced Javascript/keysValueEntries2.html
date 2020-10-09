@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 7.2.แบบฝึกหัด
+        // 2.	ให้เขียนฟังก์ชัน count(obj) ที่คืนค่าเป็นจำนวน properties ใน object
+
+        let user = {
+            name: 'John',
+            age: 30
+        };
+
+        function count(obj){
+              console.log (Object.entries(user).length);
+        };
+        //Arrow function let a = (obj) => console.log(Object.entries(user).length);
+        alert(count(user)); // 2
+
+
+    </script>
+</body>
+
+</html>

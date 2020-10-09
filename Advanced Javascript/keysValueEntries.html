@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 7.2.  แบบฝึกหัด
+กำหนดให้ salaries เป็น Object
+ให้เขียนฟังก์ชัน sumSalaries(salaries) ที่คืนค่าเป็นผลผมรวมของเงินเดือน ถ้า salaries ไม่มีสมาชิก ให้คืนค่าเป็น 0
+ -->
+
+    <script>
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250
+        };
+        
+        function sumSalaries(a) {
+            let s = 0;
+            Object.entries(a).map(([k, v]) => s = s + v
+            )
+            console.log(s)
+        };
+        alert(sumSalaries(salaries)); // 650
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width , initial-scale = 1.0">
+    <title>F.Prototype</title>
+
+</head>
+
+<body>
+    <!-- แบบฝึกหัด -->
+    <script>
+        // 1.จากโค๊ดต่อไปนี้มีการสร้าง new Rabbit() ขึ้นมา
+        function Rabbit() { }
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        alert(rabbit.eats); // true
+        //2.ถ้ามีการ alert ในบรรทัดดังกล่าวจะได้อะไรออกมา
+        function Rabbit() { }
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        Rabbit.prototype = {};
+
+        alert(rabbit.eats); // true เพราะ F.prototype จะไม่ส่งผลต่อค่าเดิม แม้จะมีการเปลี่ยนข้อมูลภายใน F.protype มันจะส่งผลกับตัวใหม่มี่สร้างหลังจากที่เปลี่ยนส่วนตัวก่อนหน้านั้นไม่ได้รับผลกระทบ
+
+        //3.ถ้ามีการเปลี่ยนบรรทัดสีเหลืองจะเป็นอย่างไร
+        function Rabbit() { }
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        Rabbit.prototype.eats = false;
+
+        alert(rabbit.eats); // false เพราะ เป็นการเปลี่ยนค่าของตัว prototype 
+
+        //4.ถ้ามีการเปลี่ยนบรรทัดสีเหลืองจะเป็นอย่างไร
+        function Rabbit() { }
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+
+        delete rabbit.eats;
+
+        alert(rabbit.eats); // true เพราะ property eats ไม่ได้อยู่ใน object rabbit แต่เป็น ตัว prototype ของ rabbit ดังนั้นลบไปจึงไม่มีผลใดๆ
+
+        //5.ถ้ามีการเปลี่ยนบรรทัดสีเหลืองจะเป็นอย่างไร
+        function Rabbit() { }
+        Rabbit.prototype = {
+            eats: true
+        };
+
+        let rabbit = new Rabbit();
+        delete Rabbit.prototype.eats;
+        alert(rabbit.eats);// undefined เพราะใน f.prototype Rabbit โดนลบ property eats ทำให้ rabbit ดึงค่าไม่เจออะไรแสดงผลเป็น undefind
+       
+        //6.ถ้าเราต้องการสร้างใช้ constructor ของ obj เราสามารถเขียนแบบนี้ได้ไหม
+        let obj2 = new obj.constructor(); //สามารถเขียนได้เพียงแต่ต้องสร้าง obj ที่รับค่ามาจาก function construtor ก่อนแล้วพอสร้าง let obj2 จะเหมือนเท่ากับ
+        //obj.constructor() มีค่าเท่ากับ OB เพราะเป็นค่าของ prototype ที่ชี้เข้าหาตัวเอง obj2 ก้มีค่าเท่ากับ OB เหมือนกัน
+    </script>
+</body>
+
+</html>

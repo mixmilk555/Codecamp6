@@ -40,11 +40,11 @@
 
         let rabbit = new Rabbit("Rabbit");
         rabbit.sayHi();
-        Rabbit.prototype.sayHi();    // มีค่าเหมือนกัน
-        Object.getPrototypeOf(rabbit).sayHi();// มีค่าเหมือนกัน
-        rabbit.__proto__.sayHi();// มีค่าเหมือนกัน
+        Rabbit.prototype.sayHi();    //ได้ค่า undefiend มีค่าเหมือนกัน เพราะไม่มี name ของตัวเอง function sayHi() ไม่ทำงาน
+        Object.getPrototypeOf(rabbit).sayHi();//ได้ค่า undefiend มีค่าเหมือนกัน
+        rabbit.__proto__.sayHi();//ได้ค่า undefiend มีค่าเหมือนกัน
 
-        //Rabbit.prototype == Object.getPrototypeOf(rabbit) == rabbit.__proto__ 
+        //Rabbit.prototype == Object.getPrototypeOf(rabbit) == rabbit.__proto__  ได้ค่า prototype ของ rabbit เหมือนกัน
 
     </script>
 </body>

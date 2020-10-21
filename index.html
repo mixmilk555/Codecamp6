@@ -1,53 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<meta name="viewport" content="device=width-device , initial-scale = 1.0">
-<title> Index </title>
-<style>
-    .ha {
-        display: flex;
 
-    }
-
-    .ta {
-        position: relative;
-        left: 5%;
-        margin: auto;
-    }
-
-    .ta2 {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        position: absolute;
-        top: 42%;
-        left: 25%;
-        right: 55%;
-        margin: 25px 0px 0px 0px
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-    }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
 <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script>
+        const rootElement = document.getElementById("root")
+        const element = React.createElement(
+            "div",
+            {className: "container"},
+            React.createElement(
+                "h1",
+                {
+                    className: "hello-react-text"
+                },
+                "Hello, React !"
+            )
+        )
 
-    <div class="ha" style="width: 100vw; height: 100vh; background-color: aqua;">
-        <div style="display: flex;justify-content: center; width: 100vw; position: absolute; color: chocolate;">
-            <p style="font-size: 60px;"> Kamin Soloyer</p>
-        </div>
-        <div class="ta2">
-            <p style="text-align: center; font-size: 60px; width: 130px; height: 70px ; border:1px solid salmon;">Click
-            </p>
-        </div>
-
-        <div class="ta">
-              <a href="https://www.pornhub.com/">  <img src="https://scontent.fbkk12-4.fna.fbcdn.net/v/t1.0-9/s960x960/52657033_2089981461096620_7668787230835474432_o.jpg?_nc_cat=103&_nc_sid=d4cf07&_nc_eui2=AeEzRPk5hNZVEA4tfd0IPKKtJRT5lajdLFQlFPmVqN0sVKZvL6xioGsPFVIhoMnbWyQsUcdwlIRv505PygeuFsTK&_nc_ohc=ClNXRQ7L2w4AX8sbhTM&_nc_ht=scontent.fbkk12-4.fna&tp=7&oh=eb504347e38de11251b2f930971e12a2&oe=5F9B27A1" alt="Girl in a jacket" width="200px" height="300px">
-              </a>
-        </div>
-    </div>
+        ReactDOM.render(
+            element,
+            rootElement
+        )
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSX</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+        const rootElement = document.getElementById("root")
+        const user = { name: "Makawan" };
+        const user2 = {};
+        const user3 = {};
+        const myComponent = {
+            one: function (user2) {
+                return "no props in user2";
+            },
+            two: function (user) {
+                return user.name
+            },
+            three : function(user3){
+                return React.createElement(
+                    'h1',
+                    {className : "Hello-world"},
+                    'Hello, world'
+                )
+            }
+        };
+
+        const element = (
+            <h1> {myComponent.two(user)} <h3>and {myComponent.one(user2)}</h3><h3>and {myComponent.three(user3)}</h3></h1>
+        )
+
+
+        ReactDOM.render(element, rootElement)
+    </script>
+</body>
+
+</html>

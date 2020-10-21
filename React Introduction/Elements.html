@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1</title>
+</head>
+
+<body>
+    <!--1. สร้าง element โดยใช้ React.createElement()
+        2. สร้าง element โดยการเขียน แบบ HTML ปกติ
+        3.ชื่อ element ให้ตั้งชื่อว่า Hello
+        4.กำหนด properties(props)ใน element ว่า firstName และ มีค่าเป็น ชื่อของแต่ละคน
+        5.และกำหนดค่า Chidren เป็น คำว่า Hello World -->
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script>
+        React.createElement(
+            'Hello',
+            { firstName : 'Makawan'},
+            "Hello,world!"
+        )
+
+    </script>
+</body>
+
+</html>

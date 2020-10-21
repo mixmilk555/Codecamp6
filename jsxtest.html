@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+        const rootElement = document.getElementById("root");
+
+        //function component สร้างเพื่อให้เราสามารถ reuse Element ที่ซ้ำๆกันบนหน้าเว็ปได้
+        //สร้าง component เมื่อมี หน้าเว็ปของเรามีการใช้งาน ส่วนนั้นเยอะๆ เช่น ปุ่ม div อะไรซ้ำๆ
+        function Mix(props) {
+            return (<h1>Welcome {props.name}</h1>);  // <<-- props คือสิ่งที่ส่งเข้าไปใน function ในที่นี้เราส่ง object{ name: "React" } เข้าไป การจะได้ค่า Object ก็คือ object.name ก็จะได้ค่ามาใส่ใน {} และต้องใส่{}ทุกตัวมี่เป็น js expression
+        };                 
+        const element = <div className="container">
+            {Mix({ name: "React" })}
+            {Mix({ name: "Judie" })}
+            <Mix name="React" />
+            <Mix name="Judie" />
+        </div>
+
+        ReactDOM.render(
+            element,
+            rootElement)
+    </script>
+</body>
+
+</html>

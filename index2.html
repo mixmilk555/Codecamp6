@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="http://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+
+
+    <div id="myApp"> </div>
+
+    <script type="text/babel">
+
+        //1. Class Component
+        class MyCard extends React.Component {
+            handleAlert() {
+                return (alert("Method in class component"));
+            }
+            render() {
+                return (<div className="card">
+                    <div className="card-title">Title</div>
+                    <div className="card-content">Content</div>
+                    <Ahoy message="This is React 101 " />
+                    <h1 onClick={this.handleAlert.bind(this)}>Click me </h1>
+                </div>
+                )
+
+            }
+        }
+
+        // 2.Function Component 
+        const Ahoy = function (props) {
+            const handleAlert = function () {
+                return (alert(props.message));
+            }
+            return (
+                <React.Fragment>
+                    <h1> Ahoy!!!!!</h1>
+                    <h1>{props.message}</h1>
+                    <button onClick={handleAlert}> Click me </button>
+                </React.Fragment>
+            )
+
+        };
+
+        // 3.Arrow Component
+        const Mix = (props) => { const aa = props.aa; return (<h1> {aa} {props.age} </h1>) };
+
+        const ha = <h1>Hello React</h1>;
+
+
+
+        //4.การส่งค่า props parent to children 1ชั้น
+        // class App extends React.Component {
+        //     state = { theme: 'pink' }
+        //     render() {
+        //         return (
+        //             <div>
+        //                 <Button color={this.state.theme}>Click me!</Button>
+        //             </div>
+        //         )
+        //     }
+        // }
+        // const Button = (props) => {
+        //     return (
+        //         <button style={{ backgroundColor: props.color }}>
+        //             {props.children}
+        //         </button>
+        //     )
+        // }
+
+        //4.การส่งค่า props parent to children แบบ 4 ชั้น
+        class App extends React.Component {
+            state = { theme: 'pink' } //state={theme : pink}
+            render() {
+                return (
+                    <div>
+                        <List buttonTheme={this.state.theme} />
+                    </div>
+                )
+            }
+        }              // props = {buttonTheme : this.state.theme(pink)}
+        const List = (props) => (
+            <div>
+                <ListItem buttonTheme={props.buttonTheme} />
+            </div>
+        )              // props = {buttonTheme : props.buttonTheme}
+        const ListItem = (props) => {
+            return (
+                <div>
+                    <Button color={props.buttonTheme}>btn 1</Button>
+                    <Button color={props.buttonTheme}>btn 2</Button>
+                </div>
+
+            )
+        }
+        //props ={color : props.buttonTheme}
+        const Button = (props) => {
+            console.log(props.children)
+            return (
+                <button style={{ backgroundColor: props.color }}>
+                    {props.children}
+                </button>
+            )
+        }
+
+        //5.การส่งค่า props ใน function
+        const Helloa = (props) => {
+            console.log(props) // props = {firstName : 'john', age : 30}
+            return <div>Hello {props.firstName} Age: {props.age}</div>
+        }    // <Hello firstName='john' age={30} />
+
+        //แบบ destructuring  Object 
+        const Hellos = (props) => {
+            const { firstName, age } = props // destructuring ค่า props
+            return <div>Hello {firstName} Age: {age}</div>
+        }
+
+        //6.Props : children ใน class component
+        class Hello extends React.Component {
+            render() {
+                return <div>Hello {this.props.children}</div>
+            }
+        }//<Hello>John Age 30</Hello>
+
+        //7.Props : children ใน function component
+        const Helloi = (props) => {
+            return <div>Hello {props.children}</div>
+        }
+
+        //8.Default props ใน function component
+        const Helloss = (props) => {
+            return (
+                <div>
+                    <div>firstname: {props.firstName}</div>
+                    <div>lastname: {props.lastName}</div>
+                </div>
+            )
+        }
+        Helloss.defaultProps = {
+            firstName: 'Tony',
+            lastName: 'Stark'
+        }
+
+        //9.Default props ใน class component
+        class Hello2 extends React.Component {
+            static defaultProps = { // static={firstName : "..",
+                firstName: 'Steve',  //       lastName : ".."}
+                lastName: 'Roger'
+            }
+            render() {
+                return (
+                    <div>
+                        <div>firstname: {this.props.firstName}</div>
+                        <div>lastname: {this.props.lastName}</div>
+                    </div>
+                )
+            }
+        }
+
+
+
+        class Apps extends React.Component {
+            state = {
+                name: 'John',
+                age: 30,
+                skills: [{ id: 1, name: 'React' },
+                { id: 2, name: 'NodeJS' }]
+            }
+            render() {
+                return (
+                    <div>
+                        <p>name: {this.state.name}</p>
+                        <p>age: {this.state.age}</p>
+                        <ul>
+                            {this.state.skills.map(skill =><li key={skill.id}> : {skill.name}</li> )}
+                        </ul>
+                    </div>
+                )
+            }
+        }
+
+        const Oak = function(props){
+            const {name} = props;
+            return(
+                <div> 
+                    <h1>name = {name}</h1>
+                    <h1>age = {props.age}</h1>
+                    <h1>isMan = {props.isMan}</h1>
+                    <h1>location = {props.location}</h1>
+                    <h1>education = {props.education.bachelor} and {props.education.master}</h1>
+                </div>
+            )
+        }
+       
+
+            ReactDOM.render( <Oak name='Mix' age={30} isMan={String(true)} location={['xdsds','sds']} education={{bachelor : 'chula', master : 'null'}}/>,
+                document.getElementById("myApp"))
+
+    </script>
+</body>
+
+</html>

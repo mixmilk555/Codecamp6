@@ -35,9 +35,9 @@
         }
 
         // 2.Function Component 
-        const Ahoy = function (props) {
-            const handleAlert = function () {
-                return (alert(props.message));
+        const Ahoy = function(props) {
+            const handleAlert = function() {
+                return (alert(props.message)); //ถ้าไม่ใช่ jsx คือ js ผสม กับ html ไม่ต้องใช้ {}
             }
             return (
                 <React.Fragment>
@@ -45,10 +45,11 @@
                     <h1>{props.message}</h1>
                     <button onClick={handleAlert}> Click me </button>
                 </React.Fragment>
-            )
-
+            )  
+            // <Ahoy message="Hi React!"/>
         };
-
+        const Ahoy1 = (props) =>{ const handleAlert =() =>{return alert(props.message)}; 
+        return (<p onClick={handleAlert}>{props.message}</p>)  }
         // 3.Arrow Component
         const Mix = (props) => { const aa = props.aa; return (<h1> {aa} {props.age} </h1>) };
 
@@ -179,17 +180,17 @@
                         <p>name: {this.state.name}</p>
                         <p>age: {this.state.age}</p>
                         <ul>
-                            {this.state.skills.map(skill =><li key={skill.id}> : {skill.name}</li> )}
+                            {this.state.skills.map(skill => <li key={skill.id}> : {skill.name}</li>)}
                         </ul>
                     </div>
                 )
             }
         }
 
-        const Oak = function(props){
-            const {name} = props;
-            return(
-                <div> 
+        const Oak = function (props) {
+            const { name } = props;
+            return (
+                <div>
                     <h1>name = {name}</h1>
                     <h1>age = {props.age}</h1>
                     <h1>isMan = {props.isMan}</h1>
@@ -198,10 +199,175 @@
                 </div>
             )
         }
-       
 
-            ReactDOM.render( <Oak name='Mix' age={30} isMan={String(true)} location={['xdsds','sds']} education={{bachelor : 'chula', master : 'null'}}/>,
-                document.getElementById("myApp"))
+        // 10.การใช้งาน setState()
+        class App2 extends React.Component {
+            state = { name: 'john' }
+            handleChangeName = () => { return this.setState({ name: 'smith' }) }
+
+            render() {
+                return (
+                    <button onClick={this.handleChangeName}>{this.state.name}</button>
+
+                )
+            }
+        }
+        class App3 extends React.Component {
+            state = { skills: [] }
+            handleChangeSkill = () => {
+                this.setState({
+                    skills: [
+                        { id: 3, name: 'Java' },
+                        { id: 4, name: 'C++' },
+                        { id: 5, name: 'Swift' }
+                    ]
+                })
+            }
+            render() {
+                return (<button onClick={this.handleChangeSkill}>change skills</button>)
+            }
+        }
+
+        class App4 extends React.Component {
+            state = {
+                text: '',
+                nextId: 3,
+                skills: [{ id: 1, name: 'React' }, { id: 2, name: 'NodeJS' }]
+            }
+            handleClick = () => {
+                // const {text,nextId,skills} = this.skills;
+                this.setState({ skills: [...this.state.skills, { id: this.state.nextId, name: this.state.text }] })
+            }
+            editSkill = (id) => {
+                const text = prompt("Please enter skillname", "");
+                this.setState({ skills: this.state.skills.map(skill => (skill.id === id) ? { id, name: text } : skill) })
+            }
+            removeSkill = (id) => {
+                this.setState({
+                    skills: this.state.skills.filter(skill => skill.id !== id)
+                })
+            }
+            render() {
+                return (
+                    <div>
+                        <button onClick={this.handleClick}> testaddArray</button>
+                        <button onClick={this.editSkill}> testaddArrayss</button>
+                    </div>)
+            }
+        }
+        //11.ตัวอย่างของ eventHandling
+        class App5 extends React.Component {
+            handleClick = (e) => {
+                alert("hfgdhdf")
+            }
+            render() {
+                return (
+                    <button onClick={this.handleClick}>Click me</button>
+                )
+            }
+        }
+
+        //12.การอ่านค่า synthetic event
+        class App6 extends React.Component {
+            handleChange = (e) => {
+                console.log(e.target.name);
+                console.log(e.target.value);
+                console.log(typeof (e));
+            }
+            render() {
+                return <div>
+                    <input name="myInput" onChange={this.handleChange} />
+                    <h1> </h1>
+                </div>
+            }
+        }
+
+        //13.การส่งค่า argument ผ่าน event handler
+        class App7 extends React.Component {
+            handleKeyUp = (e) => {
+                if (e.target.value === 'Enter') {
+                    alert('Enter was Pressed')
+                }
+            }
+            render() {
+                return (<input onKeyUp={this.handleKeyUp} />)
+            }
+        }
+        //14. list and key
+        const numbers = [1, 2, 3, 4, 5];
+        const listItems = numbers.map((number, index) => {
+            return <li key={index}> {number}</li >
+        }
+        );
+
+        const lab = ['a', 'b', 'c', 'd', 'e'];
+        const listLab = lab.map(item => <li>{item}</li>);
+
+
+        //15.css
+        const divStyle = {
+            color: 'blue',
+            fontSize: '50px'
+        }; // style ต้องอยู่ในรูป object
+
+        function HelloWorldComponent() {
+            return <div style={divStyle}>Hello World!</div>;
+        }
+        //css สร้าง object style แล้วอ้างอิง
+        class MyHeader extends React.Component {
+            render() {
+                const mystyle = {
+                    color: 'white',
+                    backgroundColor: 'DodgerBlue',
+                    padding: "10px",
+                    fontFamily: "Arial"
+                };
+                return (
+                    <div>
+                        <h1 style={mystyle}>Hello style!</h1>
+                        <p>Add a little style!</p>
+                    </div>
+                )
+            }
+        }
+
+
+        //16. controlled and uncontrolled component
+        class App8 extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    email: '',
+                    password: '',
+                    firstName: '',
+                    lastName: '',
+                    age: ''
+                }
+            }
+
+            handleChange = (e) => {
+                console.log(e.target.name)
+                this.setState({ [e.target.name]: e.target.value })
+            }
+
+            render() {
+                const { email, password } = this.state
+                return (
+                    < div >
+                        email:
+                        <input name='email' value={email} onChange={this.handleChange} />
+                        <br />
+                        password:
+                        <input name='password' value={password} onChange={this.handleChange} />
+                        <br />
+                        firstName:
+                        <input name='firstName' value={this.state.firstName} onChange={this.handleChange} />
+                    </div >
+                )
+            }
+        }
+        ReactDOM.render(<Ahoy1 message="Hi React! arrow function" />,
+            document.getElementById("myApp"))
 
     </script>
 </body>

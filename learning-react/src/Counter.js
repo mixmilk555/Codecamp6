@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom';
 
 export default class Counter extends React.Component {
     constructor(props) {
@@ -11,32 +12,34 @@ export default class Counter extends React.Component {
         // this.subtractCounter = this.subtractCounter.bind(this)
         // this.resetCounter = this.resetCounter.bind(this)
     }
-    componentDidMount(){
-       return console.log("Counter component has been mounted into the DOM")
+    componentDidMount() {
+        return console.log("Counter component has been mounted into the DOM")
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log("Counter component has been update")
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
         console.log("Counter component is going to unmount off the DOM")
     }
-    addCounter = () => { 
-        this.setState(() => ( { counter: this.state.counter + 1 }) )
+    addCounter = () => {
+        this.setState(() => ({ counter: this.state.counter + 1 }))
         //this.setState((state)=>({counter:state.counter + 1 })) state แทน this.state 
     }
     subtractCounter = () => {
         this.setState({ counter: this.state.counter - 1 })
     }
     resetCounter = () => {
-        this.setState((aaa)=>({ counter: 0 }))
+        this.setState((state) => ({ counter: 0 }))
+        // this.setState(()=>({ counter: this.state.counter * 0 }))
         //this.setState({ counter: 0 })
     }
     render() {
-        return <div>
+        return <p>
+            <Link to='/'>Home</Link>
             <h1>{this.state.counter}</h1>
-            <button onClick={this.addCounter}>+</button> 
+            <button onClick={() => this.setState(({ counter: this.state.counter + 1 }))}>+</button>
             <button onClick={this.subtractCounter}>-</button>
             <button onClick={this.resetCounter}>reset</button>
-        </div>
+        </p>
     }
 }

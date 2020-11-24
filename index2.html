@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello React</title>
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="http://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 
@@ -48,11 +48,15 @@
             )  
             // <Ahoy message="Hi React!"/>
         };
-        const Ahoy1 = (props) =>{ const handleAlert =() =>{return alert(props.message)}; 
+        const Ahoy1 = (props) =>{ const handleAlert =() =>{return alert(props.message);} 
         return (<p onClick={handleAlert}>{props.message}</p>)  }
         // 3.Arrow Component
-        const Mix = (props) => { const aa = props.aa; return (<h1> {aa} {props.age} </h1>) };
-
+        const Mix = (props) => { 
+            // const {aa} = props ได้เหมือนกัน
+             const aa = props.aa;
+             return (<h1> {aa} </h1>) 
+            };
+            // <Mix aa={26} /> props={aa:26}
         const ha = <h1>Hello React</h1>;
 
 

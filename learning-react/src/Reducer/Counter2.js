@@ -15,7 +15,7 @@ const reducer = (state, action) => {
         case "reset":
             return { ...state, counter: state.counter * 0 };
         case "addText":
-            return { ...state, text: [...state.text, action.aa] }
+            return { ...state, text: [...state.text, action.aa] } // action = { type: "addText", aa: text }
         default:
             return state;
     }
@@ -42,7 +42,7 @@ const Counter2 = function () {
             <div>
                 <form onSubmit={(e) => {
                     return e.preventDefault(),
-                        dispatch({ type: "addText", aa: text })
+                        dispatch({ type: "addText", aa: text }) // action = { type: "addText", aa: text }
                         setText('')
                 }}>                                              
                                                     {/* e={target : {name : {name} ,

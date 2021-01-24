@@ -14,5 +14,5 @@ add(1, 2, (err, value) => {
 });
 
 
-console.log(sum);
 console.log(sum2);
+

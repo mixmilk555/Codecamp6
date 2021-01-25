@@ -22,14 +22,21 @@
 
 
 
-//code แบบย่อ ของ promise ศึกษาไว้
-// console.log('1')
-// const pm = new Promise((resolve, rj) => {  // มีหรือไม่มี const pm ก็ได้
-//     setTimeout(() => {
-//         console.log('2')
-//         resolve()
-//     }, 1000)
-// }).then(() => { console.log('3') }).then(() => { console.log('End') })
+// code แบบย่อ ของ promise ศึกษาไว้
+console.log('1')
+const pm = new Promise((resolve, rj) => {  // มีหรือไม่มี const pm ก็ได้
+    setTimeout(() => {
+        console.log('2')
+        resolve()
+    }, 1000)
+}).then(() => {
+    new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log('3')
+            resolve()
+        }, 400)
+    }).then(() => setTimeout(() => { console.log('end') }, 1000))
+})
 
 
 // หลัง .then() ทำใครทำมันไม่ได้เรียงในกรณีเราใช้ setTimeout  End ออก ก่อน 3 เพราะเป็น asynchrous

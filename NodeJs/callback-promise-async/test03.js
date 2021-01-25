@@ -12,7 +12,7 @@ const fs = require('fs');
 // });
 
 
-fs.readFile('./rseadme.txt', function (err, data) {
+fs.readFile('./readme.txt', function (err, data) {  // 'utf-8' ใส่หลัง readme.txt มันจะแปลง code ให้
     if (err) {
         console.log("err")
         return;

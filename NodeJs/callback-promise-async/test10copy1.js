@@ -2,7 +2,7 @@ let done = false;
 
 
 function isItDoneYet() {
-   return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         if (done) {
             const workDone = 'Here is the thing I built';
             resolve(workDone);
@@ -13,14 +13,23 @@ function isItDoneYet() {
     })
 }
 
-
-async function checkIt(){
-    try{
-    let d = await isItDoneYet();
-    console.log(d);
-    } catch(err){
-    console.log(err);
+async function checkIt() {
+    try {
+        let d = await isItDoneYet();
+        console.log(d)
+    } catch (err) {
+        console.log(err)
     }
 }
+checkIt()
 
-checkIt();
+//แบบย่อ
+// (async ()=>{
+//     try{
+//     let d = await isItDoneYet();
+//     console.log(d);
+//     } catch(err){
+//     console.log(err);
+//     }
+// })()
+

@@ -26,4 +26,5 @@ function writeMessage(dat) {
 
 readMessage()
     .then(writeMessage)//มีการส่ง parameter มาตัวเดียว รับค่าตัวเดียว ใส่แบบย่อได้เลย
-    .then(() => console.log('success')) 
+    .then(() => console.log('success'))
+    .catch(err => console.log(err))

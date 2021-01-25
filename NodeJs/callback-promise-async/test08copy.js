@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+//producing code
 function getFile(filename) {
     return new Promise((resolve, reject) => {
         if (filename == 'start.txt')
@@ -11,7 +11,7 @@ function getFile(filename) {
     })
 }
 
-
+//consumer code
 async function readFile() {
     try {                                           // ทำได้สองแบบ
         let a = await getFile('./start.txt');       //let a = await getFile('./start.txt');  

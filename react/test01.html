@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+        const rootElement = document.getElementById("root");
+        //1. class component
+        class MyCard extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    name: "MIX"
+                }
+                this.handleEvent = this.handleEvent.bind(this)  //--> bind function ใช้ได้แค่ใน constructor
+            }
+            // state ={
+            //     name : "Milk"
+            // }                
+
+            // handleEvent = () => { alert(this.state.name) }
+            handleEvent() {
+                alert(this.state.name)
+            }
+
+            render() {   // bind method 3 แบบ แนะนำทำ function เป็น arrow ไม่ต้อง bind
+                return (
+                    <div>
+                        <Ahoy nameClass={this.state.name} propsEvent={this.handleEvent} />
+                        <h2>Age : {this.props.age}</h2>
+                        <button type="button" onClick={() => { alert(this.state.name) }}>Click Me!</button>
+                        <button type="button" onClick={() => this.handleEvent()}>Click Me!</button>
+                        <button type="button" onClick={this.handleEvent.bind(this)}>Click Me!</button>
+                        <button type="button" onClick={this.handleEvent}>Click Me!</button>
+                        <Hello nameClass={this.state.name} />
+                    </div>)
+            }
+        }
+
+        //2. function component
+        // function Ahoy(props){
+        //     return (<h1>{props.nameClass}</h1>)
+        // }  <Ahoy nameClass="..."/>
+
+        // นิยม แบบล่าง
+        const Ahoy = function (props) {   // props เป็น Object -->props = {nameClass : this.state.name}
+            const handleEvent = () => alert(props.nameClass)
+            const { nameClass: na } = props // destructuring Object
+            return (
+                <div>
+                    <h1>{na}</h1>
+                    <button type="button" onClick={handleEvent}>การใช้ function Component</button>
+                    <button type="button" onClick={props.propsEvent}>การส่ง props event</button>
+                </div>)
+        };
+
+        //3. รับค่า props มาจาก parent class component ใช้ this.props มาในการดึงค่า
+        class Hello extends React.Component {
+            render() {
+                const { nameClass } = this.props //destructuring  ประกาศใน render ไม่ใช่ใน return
+                return (<h3 style={{ color: "red" }}>{nameClass}</h3>)
+            }
+        }
+
+        ReactDOM.render(
+            <MyCard age="26" />, //ส่ง props ไป class component 
+            rootElement)
+    </script>
+</body>
+
+</html>

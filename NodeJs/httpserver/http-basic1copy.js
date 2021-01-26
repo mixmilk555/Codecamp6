@@ -20,8 +20,11 @@ function app(req, res) {
 // ).listen(8080) 
 
 //3.
-http.createServer(app).listen(8080)
+//  const server = http.createServer(app)
+//  server.listen(8080)
 
+//4.
+http.createServer(app).listen(8080)
 
 // http.createServer(return object server ออกไป) = return object "server"  --> instant class httpserver extends net.server extends EventEmitter
 

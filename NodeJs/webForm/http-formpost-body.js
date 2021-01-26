@@ -14,10 +14,10 @@ http.createServer((req, res) => {
                 res.statusCode = 500
                 return res.end("Error : " + err)
             }
-            // console.log(body)
+            console.log(body) //เป็น Json Object
             res.writeHead(200)
             res.write(`<p>${body.fname}</p><hr>`)
-            res.write(`<p style="color:red">${JSON.stringify(body)}</p><hr>`)
+            res.write(`<p style="color:red">${JSON.stringify(body)}</p><hr>`) 
             res.end(postHTML)
         })
         return;

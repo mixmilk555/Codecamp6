@@ -13,10 +13,10 @@ const fs = require('fs');
 
 
 fs.readFile('./readme.txt', function (err, data) {  // 'utf-8' ใส่หลัง readme.txt มันจะแปลง code ให้
-    if (err) {
-        console.log("err")
-        return;
-    }
+if (err) {
+    console.log("err")
+    return;
+}
     console.log(`${data}`)
     console.log("Reading file");
 });

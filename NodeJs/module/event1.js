@@ -10,7 +10,7 @@ em1.on('onesec', function (x) {
     console.log(`${x.id} : ${x.txt}`)
 })
 
-em2.on('onesec', function () {
+em2.on('twosec', function () {
     console.log(`event em2`)
 })
 

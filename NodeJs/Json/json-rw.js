@@ -13,11 +13,11 @@ jsObj = JSON.parse(data);   //string --> object
 // for(let k in jsObj)
 // console.log(jsObj[k]);
 
-user = jsObj.users; //เป็น array เพราะ = เป็นทริกการย่อ เวลาเรียกใช้ jsObj.users เป็น user ทำให้ง่ายขึ้นเวลาเรียกใช้
-// .map ของพี่เจียง
-user.map(function (value) {
-    return (value.phoneNumber = value.userId.toString().repeat(4));
-});
+// user = jsObj.users; //เป็น array เพราะ = เป็นทริกการย่อ เวลาเรียกใช้ jsObj.users เป็น user ทำให้ง่ายขึ้นเวลาเรียกใช้
+// // .map ของพี่เจียง
+// user.map(function (value) {
+//     return (value.phoneNumber = value.userId.toString().repeat(4));
+// });
 
 // .map คิดเอง
 // { user.map(function (value) {
@@ -26,5 +26,5 @@ user.map(function (value) {
 // console.log(user)
 
 backJson = JSON.stringify(jsObj) //object --> string
-fs.writeFileSync("./output.json", backJson)
+fs.writeFileSync("./output3.json", backJson)
 console.log('Success')

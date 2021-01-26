@@ -2,20 +2,20 @@ const fs = require('fs');
 
 function readMessage() {
     return new Promise((resolve, reject) => {
-        fs.readFile('message.txt', 'utf-8', function (err, res) {
+        fs.readFile('message.txt', 'utf-8', function (err, data) {
             if (err) {
                 reject(err);
             } else {
-                resolve(res);
+                resolve(data);
             }
         })
     });
 }
 function writeMessage(dat) {
     return new Promise((resolve, reject) => {
-        fs.writeFile('out.txt', dat, function (err, res) {
+        fs.writeFile('out.txt', dat, function (err, data) {
             if (err) reject(err)
-            else resolve(res)
+            else resolve()
         })
     })
 }

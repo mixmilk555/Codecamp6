@@ -23,7 +23,7 @@ app.get('/formSearch', (req, res) => {
 })
 
 app.get('/search', (req, res) => {
-    res.send(users.find((x) => { return x.firstName === req.query.uname; }))
+    res.send(users.find((x) => { return x.firstName === req.query.fname; }))
 })
 
 app.get('/users/:id', (req, res) => {

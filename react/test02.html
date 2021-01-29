@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+        const rootElement = document.getElementById("root");
+
+        class Counter extends React.Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    count: 0
+                }
+            }
+            // handlePuls = () => {
+            //     this.setState({ count: this.state.count + 1 })
+            // }
+            handleDe = () => {
+                this.setState((state) => ({ count: state.count - 1 }))
+            }
+            handleReset = () => {
+                this.setState(() => ({ count: this.state.count * 0 }))
+            }
+            //event การอ่านค่า
+            handelEvent = (e) => { //e synthetic event เป็น object ไว้เก็บค่าที่มาจาก event
+                console.log(e.target.name)
+                console.log(e.target.value)
+            }
+            render() {                       
+                 // <!--  การ ใน style ใน jsx-->
+                return (
+                    <div>
+                        <h2 style={{color:'tomato'}}>{this.state.count}</h2>
+                        <button type="button" onClick={() => this.setState({ count: this.state.count + 1 })}> + </button>
+                        <button type="button" onClick={this.handleDe}> - </button>
+                        <button type="button" onClick={this.handleReset}> reset </button>
+                        <input type="text" name="myInput" onChange={this.handelEvent} />
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Counter />,
+            rootElement)
+    </script>
+</body>
+
+</html>

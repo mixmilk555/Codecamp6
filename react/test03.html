@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+        const rootElement = document.getElementById("root");
+
+        class App extends React.Component {
+            state = {
+                email: '',
+                password: ''
+            }
+            // handleEmailChange = (e) => {
+            //     //this.setState((state) => ({ email: e.target.value }))  //ไม่ได้ เนื่องจาก value ใน input แสดงค่าปันจุบันของ state มันรันตลอดเวลา วิธีแบบนี้ทำให้เกิด ดีเลย์ มันเลย error
+            //     this.setState({email: e.target.value})
+            // }
+
+            // handlePasswordChange = (e) => {
+            //     this.setState({ password: e.target.value })
+            // }
+            handleChange =(e)=>{
+                const name = e.target.name
+                const value = e.target.value
+                this.setState({[name] : value})  // [name] เป็นตัวแทนของ key ทั้งหมดใน state วิธีนี้ง่าย
+                console.log(this.state)
+            }
+            render() {
+                return (
+                    <div>
+                    Email:  <input name="email" value={this.state.email} onChange={this.handleChange} />
+                    Password:<input name="password" type="password" value={this.state.password} onChange={this.handleChange} />
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <App />,
+            rootElement)
+    </script>
+</body>
+
+</html>

@@ -32,6 +32,13 @@
             handleEvent() {
                 alert(this.state.name)
             }
+            handleChangeName = () => {          
+                this.setState((oldState) =>{        //setState มีสองแบบ 1.function 2. return Object ไปเลย
+                    return oldState.name = "Milk" 
+                    //ค่าที่ return จะเป็น state ใหม่  
+                })
+                // this.setState({ name: "Por" })
+            }
 
             render() {   // bind method 3 แบบ แนะนำทำ function เป็น arrow ไม่ต้อง bind
                 return (
@@ -42,6 +49,7 @@
                         <button type="button" onClick={() => this.handleEvent()}>Click Me!</button>
                         <button type="button" onClick={this.handleEvent.bind(this)}>Click Me!</button>
                         <button type="button" onClick={this.handleEvent}>Click Me!</button>
+                        <button type="button" onClick={this.handleChangeName}>Set State!</button>
                         <Hello nameClass={this.state.name} />
                     </div>)
             }
@@ -79,3 +87,7 @@
 </body>
 
 </html>
+
+<!-- ข้อต่าง props vs state
+-props มาจาก parent ที่ส่งมามีการส่งต่อ
+-state ถูกสร้างภายใน component นั้น และจะอยู่กับ component นั้นตลอด แต่สามารถส่งต่อได้ โดยผ่าน props -->

@@ -4,8 +4,12 @@
   "description": "",
   "main": "function.js",
   "scripts": {
+    "start": "http-formpost-bodyparsing",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body": "^5.1.0"
+  }
 }

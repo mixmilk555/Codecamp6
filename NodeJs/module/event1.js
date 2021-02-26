@@ -18,7 +18,7 @@ em2.on('twosec', function () {
 
 
 
-// นำ module เข้ามาผสม
+// นำ module อื่นเข้ามาผสม
 // const EventEmitter = require('events') 
 // const mc = require('./myClass');
 // const em1 = new EventEmitter()  

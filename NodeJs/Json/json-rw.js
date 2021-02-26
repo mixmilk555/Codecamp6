@@ -20,9 +20,10 @@ jsObj = JSON.parse(data);   //string --> object
 // });
 
 // .map คิดเอง
-// { user.map(function (value) {
-//      return (value.phoneNumber = (1111111 * value.userId));
-//  })}
+user = jsObj.users;
+user.map(function (value) {
+    return (value.phoneNumber = (1111111 * value.userId));
+})
 // console.log(user)
 
 backJson = JSON.stringify(jsObj) //object --> string

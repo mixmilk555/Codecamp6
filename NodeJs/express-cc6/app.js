@@ -4,7 +4,10 @@ const appRoute = require('./appRoute')
 
 
 app.use('/users', appRoute)
-
+// app.use('/users',(req,res,next)=>{
+//     appRoute(req,res)
+//     next()
+// })
 
 app.use(express.static('./public'))
 

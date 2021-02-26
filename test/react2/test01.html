@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <script type="text/babel">
+
+        // 2.ยุคต่อมาใช้ JSX(html + js) แทน React.createElement เพราะง่ายกว่า
+        const element = <h1 style={{ color: 'blue' }}>Hello,world </h1>
+
+
+        //3. function component
+        //แบบ 1
+        const Ahoy = function () {
+            return (<div> <h1> Function component</h1></div>)
+        }
+        //แบบ 2
+        function Ahoy1(props) { // รับ props มาจาก parent Component
+            const { name } = props
+            const handleClick = function (props) {
+                alert('This function in function component' + " " + props)
+            }
+            // const handleClick1 = () => {alert('This function in function component')}
+            return (
+                <div>
+                    <h1 onClick={() => handleClick(name)}> Function component1 {name} </h1>
+                </div>)
+        }
+        //แบบ 3 arrow function
+        const Ahoy2 = (props) => {
+            return (
+                <div>
+                    <h1 style={{ color: props.color }}> Function component2(Arrow function)</h1>
+                </div>)
+        }
+        //<Ahoy2 color="blue" />
+
+
+        //4. class component
+        class MyCard extends React.Component {
+            constructor() {
+                super();
+                this.state = { count: 1, color: 'blue' }
+                this.handleClick = this.handleClick.bind(this)
+            }
+            //ถ้าเขียนแบบปกติ ต้อง bind method ก่อน
+            handleClick = function () {
+                this.setState((state) => { return ({ color: 'red' }) })
+            }
+            handleClick2 = () => {
+                this.setState({ color: 'pink' })
+                console.log(this.state)
+            }
+            handleClickCount1 = () => {
+                this.setState((state) => ({ count: state.count + 1 }))
+            }
+            handleClickCount2 = () => {
+                this.setState((state) => ({ count: state.count - 1 }))
+            }
+            handleClickCount3 = () => {
+                this.setState((state) => ({ count: state.count * 0 }))
+            }
+            render() {
+                const { count } = this.state
+                const { firstName, age } = this.props
+                return (<div >
+                    <h1 >Class component</h1>
+                    <h2 >This state is count : {count} </h2>
+                    <h5 >นำ component หนึ่งมารันในอีก compoenent หนึ่ง =</h5>
+                    <Ahoy2 color={this.state.color} />
+                    <button onClick={this.handleClick}> Click me </button>
+                    <button onClick={this.handleClick.bind(this)}> bind ใน event onClick เลย </button>
+                    <button onClick={() => this.setState({ color: 'black' })}> สร้างfunction ใน onClick เลย </button>
+                    <button onClick={() => this.handleClick()}> ถ้าเขียนแบบ arrow ไม่ต้อง bind </button>
+                    <button onClick={this.handleClick2}> ถ้าเขียนแบบ arrow ไม่ต้อง bind </button>
+                    <div>
+                        <br />
+                        <button onClick={this.handleClickCount1}> + </button>
+                        <button onClick={this.handleClickCount2}> - </button>
+                        <button onClick={this.handleClickCount3}> reset </button>
+                    </div>
+                    <Ahoy1 name="Mix" />
+                    <h5>การใช้ props ใน Class component = {firstName} : {age} </h5>
+                    <h5>props มี Children ได้ = {this.props.children} คำสั่ง("this.props.children")</h5>
+                </div>)
+            }
+        }
+        // <MyCard firstName="john" age={30} > This props Children </MyCard>
+
+        //5. eventHanding   and List key in React and style
+        class App extends React.Component {
+            state = {
+                value: '',
+                arr: [1, 2, 3, 4]
+            }
+            handleClick = (e) => {  // e = synthetic event(เป็น Object) ที่รับมาแล้วให้ handle จัดการ 
+                // console.log(e.target.name)
+                // console.log(e.target.value)
+                console.log(this.state.value)
+                this.setState({ value: e.target.value })
+            }
+            render() {
+                //แบบ 1
+                const myStyle = {
+                    color: "blue",
+                    backgroundColor: "DodgerBlue"
+                }
+                //แบบ 2 inline style={{color:'tomato',fontSize:'2em'}}
+                const { arr } = this.state
+
+
+                return (
+                    <div style={myStyle}>
+                        Event Handing<br />
+                        <input name="FirstName" value={this.value} onChange={this.handleClick} /><br />
+
+                    List and Key in React
+                        {arr.map((item) => <ol><li key={arr.toString()}>{item}</li></ol>)}
+                    </div>)
+            }
+        }
+
+
+        //6.Controlled and uncontrolled 
+        //ใช้ tag input การที่เราจะเก็บค่า value เพื่อเชื่อม react ใช้ onChange event 
+        class App1 extends React.Component {
+            state = {
+                email: '',
+                password: ''
+            }
+            handleChange = (e) => {
+                this.setState({ [e.target.name]: e.target.value })
+                console.log(this.state.email)
+                console.log(this.state.password)
+            }
+            render() { // render คือกระบวนการแปลง jsx --> js by babel
+                return (
+                    <div>
+                        Email:<input name="email" value={this.state.email} onChange={this.handleChange} />
+                        Password:<input name="password" value={this.state.password} onChange={this.handleChange} />
+                    </div>)
+            }
+        }
+
+
+
+
+
+        //1. react ต้นกำเนิด React.createElement , ReactDom.render
+        React.createElement(
+            'h2',
+            { style: { color: 'blue' } },
+            'Hello world'
+        )
+        ReactDOM.render(<App1 />, document.getElementById('root'))
+
+
+
+
+    </script>
+</body>
+
+</html>

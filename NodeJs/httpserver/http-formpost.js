@@ -11,8 +11,8 @@ http.createServer((req, res) => {
     req.on('end', () => {
         body = decodeURI(body)
         console.log(body)
-        res.writeHead(200, { "content-type": "text/html" }) //{"content-type": "text/html"} ไม่ใส่ก็ได้ เพราะแยกไฟล์ html ไว้อีกไฟล์ไม่ต้องเขียน เขียนเฉพาะเราใช้ html ใน method เท่านั้น
+        res.writeHead(200, { "content-type": "text/html; charset= utf-8"}) //{"content-type": "text/html"} ไม่ใส่ก็ได้ เพราะแยกไฟล์ html ไว้อีกไฟล์ไม่ต้องเขียน เขียนเฉพาะเราใช้ html ใน method เท่านั้น
         res.write(`<h2>ข้อมูล Body : ${body}</h2><hr>`)
-        res.end(postHTML)
+        res.end(postHTML.toString())
     })
 }).listen(8080, () => console.log('Server start..'))

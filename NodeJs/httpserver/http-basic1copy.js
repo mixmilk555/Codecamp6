@@ -28,7 +28,6 @@ http.createServer(app).listen(8080)
 
 // http.createServer(return object server ออกไป) = return object "server"  --> instant class httpserver extends net.server extends EventEmitter
 
-// object "server ={ method...return callback(req,res)}
 
 
 

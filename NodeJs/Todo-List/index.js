@@ -13,6 +13,7 @@ const todoList = require('./controllers/todoList')
 app.use(cors());
 
 //app.use(bodyParser.urlencoded({extended : true})) // ดึง body-parser มาช่วยแกะ body (กรณีนี้เป็นแบบ Url)
+app.use(express.json()) // ดักจับ body json แปลงเป็น object json ให้เราใช้งาน
 app.use(express.urlencoded({ extended: false }));  // เหมือนกันใน express มีมาให้เลยแปลงข้อมูล body จาก form เป็นรูปแบบ json object
 
 //แบบย่อ 

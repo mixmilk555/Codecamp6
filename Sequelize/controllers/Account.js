@@ -47,6 +47,7 @@ module.exports = { getAllAccount }
 // async function checkIt(req,res) {
 //     try {
 //         let a = await getAllAccount(req,res);
+//         let a = await db.Account.findAll()
 //         res.status(200).send(a)
 //     } catch (err) {
 //         console.log(err)

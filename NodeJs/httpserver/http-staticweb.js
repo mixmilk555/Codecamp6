@@ -23,6 +23,7 @@ server.on('request', (req, res) => {
         return getUrl('./formGet.html', req, res)
 
     } else if (p_url.pathname === '/getdata') {    //p_url.pathname === './getdata'
+        // console.log(p_url)
         return gt.getdata(req, res)
 
     } else {
